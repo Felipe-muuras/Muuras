@@ -1,6 +1,12 @@
 import Header from '../../components/header/Header';
+import { useTranslation } from 'react-i18next';
+import ScrollButton from '../../components/scrollButton/ScrollButton';
 
 export default function Home() {
+  const { t } = useTranslation();
+  //I need to create this to use the translation in the hero section, but I can also
+  // use it in the header component, so I will create it there as well and pass the t function as a prop to the header
+  // component, so I can use it there as well.
   return (
     <div
       className="HomePage"
@@ -15,17 +21,15 @@ export default function Home() {
       <div
         className="HeroSection"
         style={{
-          padding: '110px 24px',
+          padding: '110px 24px 0px 24px ',
           width: '100%',
-          alignItems: 'start',
-          flexDirection: 'row',
+          height: '80vh',
+          alignItems: 'center',
+          flexDirection: 'column',
           justifyContent: 'center',
           display: 'flex',
-          backgroundColor: '#eee',
           backgroundImage: 'url(../../assets/heroBackground.gif)',
-          backgroundRepeat: 'no-repeat',
           backgroundSize: 'fill',
-          height: '65vh',
         }}
       >
         <div
@@ -43,12 +47,12 @@ export default function Home() {
           }}
         >
           <img src="../../assets/whiteLogo.svg" alt="" />
-          <h1 style={{ fontSize: '80px' }}>Growing Resilient Cities</h1>
+          <h1 style={{ fontSize: '80px' }}>{t('heroTitle')}</h1>
           <p style={{ fontSize: '20px', fontWeight: '300' }}>
-            Muuras fosters bio-based solutions that support sustainable urban
-            ecosystems.
+            {t('heroSubtitle')}
           </p>
         </div>
+        <ScrollButton test={t('homeScrollButton')} />
       </div>
     </div>
   );

@@ -42,6 +42,8 @@ export const StyledLink = styled(NavLink)`
 `;
 
 export const WrapperActions = styled.div`
+  display: flex;
+  column-gap: 1rem;
   button {
     background-color: ${primaryColor[500]};
     border: none;
