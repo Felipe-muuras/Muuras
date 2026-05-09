@@ -22,7 +22,10 @@ export default function Home() {
       <Header />
       <HeroSection>
         <HeroContent>
-          <img src="../../assets/whiteLogo.svg" alt="" />
+          <img
+            src={`${import.meta.env.BASE_URL}assets/whiteLogo.svg`}
+            alt="Muuras Logo"
+          />
           <h1>{t('heroTitle')}</h1>
           <p>{t('heroSubtitle')}</p>
         </HeroContent>
@@ -31,7 +34,7 @@ export default function Home() {
       <ResilienceSection>
         <TopResilienceSection>
           <img
-            src="../../assets/resilienceTopImage.png"
+            src={`${import.meta.env.BASE_URL}assets/resilienceTopImage.png`}
             alt="Resilience Banner"
           />
           <ResilienceText>

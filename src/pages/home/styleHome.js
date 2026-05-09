@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { primaryColor } from '../../utils/colors';
+import heroBackground from '/assets/heroBackground.gif';
 
 export const HomeContainer = styled.div`
   width: 100%;
@@ -16,7 +17,7 @@ export const HeroSection = styled.div`
   flex-direction: column;
   justify-content: center;
   display: flex;
-  background-image: url(../../assets/heroBackground.gif);
+  background-image: url(${heroBackground});
   background-size: cover;
 `;
 
@@ -36,6 +37,9 @@ export const HeroContent = styled.div`
   p {
     font-size: 20px;
     font-weight: 300;
+  }
+  img {
+    width: 250px;
   }
 `;
 
