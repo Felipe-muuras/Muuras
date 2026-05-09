@@ -1,11 +1,16 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { HashRouter } from 'react-router-dom';
+
 import './index.css';
-import AppRoutes from './appRoutes.jsx';
 import './lib/i18n';
+
+import AppRoutes from './appRoutes.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <AppRoutes />
+    <HashRouter>
+      <AppRoutes />
+    </HashRouter>
   </StrictMode>,
 );
