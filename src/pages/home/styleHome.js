@@ -42,6 +42,7 @@ export const HeroContent = styled.div`
 export const ResilienceSection = styled.div`
   background-color: ${primaryColor[900]};
   width: 100%;
+  align-items: center;
   padding: 80px 120px;
   row-gap: 1rem;
   display: flex;
@@ -53,6 +54,7 @@ export const ResilienceSection = styled.div`
 `;
 
 export const TopResilienceSection = styled.div`
+  max-width: 1200px;
   display: flex;
   column-gap: 2rem;
   img {
