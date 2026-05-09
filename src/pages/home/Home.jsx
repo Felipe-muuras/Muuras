@@ -1,6 +1,16 @@
 import Header from '../../components/header/Header';
 import { useTranslation } from 'react-i18next';
-import ScrollButton from '../../components/scrollButton/ScrollButton';
+import ScrollDownButton from '../../components/scrollDownButton/ScrollDownButton';
+import {
+  HomeContainer,
+  HeroSection,
+  HeroContent,
+  ResilienceSection,
+  TopResilienceSection,
+  ResilienceText,
+  ResilienceCardsContainer,
+} from './styleHome';
+import ImageCard from '../../components/imageCard/ImageCard';
 
 export default function Home() {
   const { t } = useTranslation();
@@ -8,52 +18,51 @@ export default function Home() {
   // use it in the header component, so I will create it there as well and pass the t function as a prop to the header
   // component, so I can use it there as well.
   return (
-    <div
-      className="HomePage"
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        flexDirection: 'row',
-        width: '100%',
-      }}
-    >
+    <HomeContainer>
       <Header />
-      <div
-        className="HeroSection"
-        style={{
-          padding: '110px 24px 0px 24px ',
-          width: '100%',
-          height: '80vh',
-          alignItems: 'center',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          display: 'flex',
-          backgroundImage: 'url(../../assets/heroBackground.gif)',
-          backgroundSize: 'fill',
-        }}
-      >
-        <div
-          className="HeroContent"
-          style={{
-            maxWidth: '1200px',
-            width: '100%',
-            height: '100%',
-            color: '#fff',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            rowGap: '2rem',
-          }}
-        >
+      <HeroSection>
+        <HeroContent>
           <img src="../../assets/whiteLogo.svg" alt="" />
-          <h1 style={{ fontSize: '80px' }}>{t('heroTitle')}</h1>
-          <p style={{ fontSize: '20px', fontWeight: '300' }}>
-            {t('heroSubtitle')}
-          </p>
-        </div>
-        <ScrollButton test={t('homeScrollButton')} />
-      </div>
-    </div>
+          <h1>{t('heroTitle')}</h1>
+          <p>{t('heroSubtitle')}</p>
+        </HeroContent>
+        <ScrollDownButton text={t('homeScrollDownButton')} />
+      </HeroSection>
+      <ResilienceSection>
+        <TopResilienceSection>
+          <img
+            src="../../assets/resilienceTopImage.png"
+            alt="Resilience Banner"
+          />
+          <ResilienceText>
+            <h2>Restoring Natural Resilience:</h2>
+            <p>
+              Resilient cities are the future of urban living. Resilient cities
+              keep humans safe, sheltered, and healthy in the face of extreme
+              weather, pollution, and climate change. Muuras collaborates with
+              nature to fulfil its mission: restoring the resilience of cities
+              to safeguard life itself.{' '}
+            </p>
+          </ResilienceText>
+        </TopResilienceSection>
+        <ResilienceCardsContainer>
+          <ImageCard
+            imagePath="/assets/healthyEcosystemsCard.png"
+            title="Healthy ecosystems"
+            description="Like all living beings, humans need a healthy home (eco comes from the greek word for home: ‘oikos’), where they can drink clean water, eat clean food, and breathe clean air. Resilient cities provide healthy homes not just by avoiding unnecessary pollution, but also by actively removing existing pollutants from the environment."
+          />
+          <ImageCard
+            imagePath="/assets/coexistenceCard.png"
+            title="Coexistence"
+            description=" Life is better when it is shared: we choose to live in cities for a reason, and our lives fundamentally depend on other species. In resilient cities, nature-inclusive design harnesses the unique strengths of different life forms (plants, animals, fungi, etc.) to create a self-regulating environment that keeps us safe and is prepared to deal with unpredictable events."
+          />
+          <ImageCard
+            imagePath="/assets/sustainableDevelopmentCard.png"
+            title="Sustainable development"
+            description=" ‘If you’re not growing you’re dying’, so resilient cities are always in development. Being ready for the future requires finding new ways of being, of organizing ourselves, of building (infra)structures, of using our resources. Every day, we use what we have to make life in the city a little better, without placing a burden on another place or time."
+          />
+        </ResilienceCardsContainer>
+      </ResilienceSection>
+    </HomeContainer>
   );
 }
