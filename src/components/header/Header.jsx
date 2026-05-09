@@ -26,7 +26,10 @@ export default function Header() {
   return (
     <WrapperHeader>
       <WrapperLinks>
-        <img src="../../assets/whiteIcon.svg" alt="Muuras Logo" />
+        <img
+          src={`${import.meta.env.BASE_URL}assets/whiteIcon.svg`}
+          alt="Muuras Logo"
+        />
         <StyledLink to="/">{t('headerHomeLink')}</StyledLink>
         <StyledLink to="/services">
           {t('headerServicesLink')} <CaretDownIcon size={20} />

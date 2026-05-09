@@ -4,7 +4,7 @@ import { WrapperBuildingPage, BuildingPageSocialLinks } from './styleBuilding';
 export default function Building() {
   return (
     <WrapperBuildingPage>
-      <img src="../../assets/whiteLogo.svg" alt="" />
+      <img src={`${import.meta.env.BASE_URL}assets/whiteLogo.svg`} alt="" />
       <h1>Building a new page</h1>
       <p>You can access other links</p>
       <BuildingPageSocialLinks>

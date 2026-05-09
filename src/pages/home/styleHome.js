@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { primaryColor } from '../../utils/colors';
+import heroBackground from '/assets/heroBackground.gif';
 
 export const HomeContainer = styled.div`
   width: 100%;
@@ -16,7 +17,7 @@ export const HeroSection = styled.div`
   flex-direction: column;
   justify-content: center;
   display: flex;
-  background-image: url(../../assets/heroBackground.gif);
+  background-image: url(${heroBackground});
   background-size: cover;
 `;
 
@@ -37,11 +38,15 @@ export const HeroContent = styled.div`
     font-size: 20px;
     font-weight: 300;
   }
+  img {
+    width: 250px;
+  }
 `;
 
 export const ResilienceSection = styled.div`
   background-color: ${primaryColor[900]};
   width: 100%;
+  align-items: center;
   padding: 80px 120px;
   row-gap: 1rem;
   display: flex;
@@ -53,6 +58,7 @@ export const ResilienceSection = styled.div`
 `;
 
 export const TopResilienceSection = styled.div`
+  max-width: 1200px;
   display: flex;
   column-gap: 2rem;
   img {
