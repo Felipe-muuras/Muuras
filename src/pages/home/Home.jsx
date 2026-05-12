@@ -11,6 +11,8 @@ import {
   ResilienceCardsContainer,
 } from './styleHome';
 import ImageCard from '../../components/imageCard/ImageCard';
+import GetStartedSection from '../../components/getStartedSection/GetStartedSection';
+import SliderSection from '../../components/sliderContainer/SliderContainer';
 
 export default function Home() {
   const { t } = useTranslation();
@@ -66,6 +68,8 @@ export default function Home() {
           />
         </ResilienceCardsContainer>
       </ResilienceSection>
+      <GetStartedSection />
+      <SliderSection />
     </HomeContainer>
   );
 }

@@ -1,14 +1,13 @@
-import { primaryColor } from '../../utils/colors';
 import { useTranslation } from 'react-i18next';
 import {
   WrapperHeader,
   WrapperLinks,
   WrapperActions,
-  IconWrapper,
   StyledLink,
 } from './styleHeader';
-import { ArrowRightIcon, CaretDownIcon } from '@phosphor-icons/react';
+import { CaretDownIcon } from '@phosphor-icons/react';
 import { useState } from 'react';
+import Button from '../buttonAnimated/Button';
 
 export default function Header() {
   const {
@@ -38,12 +37,7 @@ export default function Header() {
       </WrapperLinks>
       <WrapperActions>
         <button onClick={handleChangeLanguage}>Change Language</button>
-        <button>
-          Contact
-          <IconWrapper>
-            <ArrowRightIcon size={20} color={primaryColor[500]} weight="bold" />
-          </IconWrapper>
-        </button>
+        <Button label={t('headerContactLink')} />
       </WrapperActions>
     </WrapperHeader>
   );
