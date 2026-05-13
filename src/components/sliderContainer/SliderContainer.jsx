@@ -12,18 +12,22 @@ export default function SliderSection() {
     {
       imagePath: '/assets/duurzame.png',
       title: 'Nominated for Duurzame Dinsdag',
+      link: '',
     },
     {
       imagePath: '/assets/regieorgaan.png',
       title: 'SoW & FloW: Collaborative experimentation',
+      link: '',
     },
     {
       imagePath: '/assets/CircularChallenge.png',
       title: 'Winner of the Circular Challenge: High rise',
+      link: '',
     },
     {
       imagePath: '/assets/amsterdamInstitute.png',
       title: 'Boosting at the AMS Institute',
+      link: '',
     },
   ];
 

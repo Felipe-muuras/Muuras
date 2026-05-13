@@ -1,3 +1,4 @@
+import Button from '../buttonAnimated/Button';
 import {
   GetStartedSectionContainer,
   GetStartedCardContainer,
@@ -19,7 +20,7 @@ export default function GetStartedSection() {
             the page, with your project needs—our team will recommend the
             service package that best supports your goals.
           </p>
-          <button className="get-started-button">Contact</button>
+          <Button label="Contact" />
         </GetStartedSectionText>
       </GetStartedCardContainer>
     </GetStartedSectionContainer>
