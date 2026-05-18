@@ -1,3 +1,4 @@
+import { t } from 'i18next';
 import Button from '../buttonAnimated/Button';
 import {
   GetStartedSectionContainer,
@@ -14,12 +15,8 @@ export default function GetStartedSection() {
           alt="Get Started "
         />
         <GetStartedSectionText>
-          <h2>How to get started with Muuras?</h2>
-          <p>
-            Simply contact us, by email or the contact sheet at the bottom of
-            the page, with your project needs—our team will recommend the
-            service package that best supports your goals.
-          </p>
+          <h2>{t('getStartSectionTitle')}</h2>
+          <p>{t('getStartSectionDescription')}</p>
           <Button label="Contact" />
         </GetStartedSectionText>
       </GetStartedCardContainer>

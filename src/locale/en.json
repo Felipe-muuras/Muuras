@@ -3,9 +3,26 @@
     "headerHomeLink": "Home",
     "headerServicesLink": "Services",
     "headerProductsLink": "Products",
+    "selectorLanguageLabel": "Select a language",
     "headerContactLink": "Contact",
     "heroTitle": "Growing Resilient Cities",
     "heroSubtitle": "Muuras fosters bio-based solutions that support sustainable urban ecosystems.",
-    "homeScrollDownButton": "Know more about Muuras"
+    "homeScrollDownButton": "Know more about Muuras",
+    "resilienceSectionTitle": "Restoring Natural Resilience:",
+    "resilienceSectionDescription": "Resilient cities are the future of urban living. Resilient cities keep humans safe, sheltered, and healthy in the face of extreme weather, pollution, and climate change. Muuras collaborates with nature to fulfil its mission: restoring the resilience of cities to safeguard life itself.",
+    "healthyEcosystemsCardTitle": "Healthy ecosystems",
+    "healthyEcosystemsCardDescription": "Like all living beings, humans need a healthy home (eco comes from the greek word for home: ‘oikos’), where they can drink clean water, eat clean food, and breathe clean air. Resilient cities provide healthy homes not just by avoiding unnecessary pollution, but also by actively removing existing pollutants from the environment.",
+    "CoexistenceCardTitle": "Coexistence",
+    "CoexistenceCardDescription": "Life is better when it is shared: we choose to live in cities for a reason, and our lives fundamentally depend on other species. In resilient cities, nature-inclusive design harnesses the unique strengths of different life forms (plants, animals, fungi, etc.) to create a self-regulating environment that keeps us safe and is prepared to deal with unpredictable events.",
+    "sustainableDevelopmentCardTitle": "Sustainable development",
+    "sustainableDevelipmentCardDescription": "‘If you’re not growing you’re dying’, so resilient cities are always in development. Being ready for the future requires finding new ways of being, of organizing ourselves, of building (infra)structures, of using our resources. Every day, we use what we have to make life in the city a little better, without placing a burden on another place or time.",
+    "getStartSectionTitle": "How to get started with Muuras?",
+    "getStartSectionDescription": "Simply contact us, by email or the contact sheet at the bottom of the page, with your project needs—our team will recommend the service package that best supports your goals.",
+    "impactSectionTitle": "Impact",
+    "impactSectionDescription": "See how our work is making a difference",
+    "impactFirstAwardTitle": "Nominated for Duurzame Dinsdag",
+    "impactSecondAwardTitle": "SoW & FloW: Collaborative experimentation",
+    "impactThirdAwardTtile": "Winner of the Circular Challenge: High rise",
+    "impactFourthAwardTitle": "Boosting at the AMS Institute"
   }
 }

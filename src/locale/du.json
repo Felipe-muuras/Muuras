@@ -1,11 +1,28 @@
 {
   "translation": {
-    "headerHomeLink": "Begin",
+    "headerHomeLink": "Home",
     "headerServicesLink": "Diensten",
     "headerProductsLink": "Producten",
+    "selectorLanguageLabel": "Selecteer een taal",
     "headerContactLink": "Contact",
-    "heroTitle": "Groeiende Veerkrachtige Steden",
-    "heroSubtitle": "Muuras bevordert bio-gebaseerde oplossingen die duurzame stedelijke ecosystemen ondersteunen.",
-    "homeScrollDownButton": "Leer meer over Muuras"
+    "heroTitle": "Veerkrachtige Steden Laten Groeien",
+    "heroSubtitle": "Muuras bevordert biogebaseerde oplossingen die duurzame stedelijke ecosystemen ondersteunen.",
+    "homeScrollDownButton": "Meer weten over Muuras",
+    "resilienceSectionTitle": "Herstel van Natuurlijke Veerkracht:",
+    "resilienceSectionDescription": "Veerkrachtige steden zijn de toekomst van stedelijk leven. Veerkrachtige steden houden mensen veilig, beschermd en gezond tegenover extreem weer, vervuiling en klimaatverandering. Muuras werkt samen met de natuur om haar missie te vervullen: het herstellen van de veerkracht van steden om het leven zelf te beschermen.",
+    "healthyEcosystemsCardTitle": "Gezonde ecosystemen",
+    "healthyEcosystemsCardDescription": "Zoals alle levende wezens hebben mensen een gezond thuis nodig (eco komt van het Griekse woord voor thuis: ‘oikos’), waar zij schoon water kunnen drinken, schoon voedsel kunnen eten en schone lucht kunnen inademen. Veerkrachtige steden bieden gezonde leefomgevingen door niet alleen onnodige vervuiling te vermijden, maar ook actief bestaande vervuiling uit het milieu te verwijderen.",
+    "CoexistenceCardTitle": "Samenleven",
+    "CoexistenceCardDescription": "Het leven is beter wanneer het gedeeld wordt: we kiezen er niet voor niets voor om in steden te wonen, en ons leven hangt fundamenteel af van andere soorten. In veerkrachtige steden benut natuurinclusief ontwerp de unieke krachten van verschillende levensvormen (planten, dieren, schimmels, enz.) om een zelfregulerende omgeving te creëren die ons veilig houdt en voorbereid is op onvoorspelbare gebeurtenissen.",
+    "sustainableDevelopmentCardTitle": "Duurzame ontwikkeling",
+    "sustainableDevelipmentCardDescription": "‘Als je niet groeit, ga je achteruit’, daarom zijn veerkrachtige steden voortdurend in ontwikkeling. Klaar zijn voor de toekomst betekent nieuwe manieren vinden van leven, organiseren, bouwen van (infra)structuren en het gebruiken van onze middelen. Elke dag gebruiken we wat we hebben om het leven in de stad een beetje beter te maken, zonder een last te leggen op een andere plaats of tijd.",
+    "getStartSectionTitle": "Hoe begin je met Muuras?",
+    "getStartSectionDescription": "Neem eenvoudig contact met ons op via e-mail of het contactformulier onderaan de pagina met de behoeften van jouw project — ons team zal het dienstenpakket aanbevelen dat jouw doelen het beste ondersteunt.",
+    "impactSectionTitle": "Impact",
+    "impactSectionDescription": "Bekijk hoe ons werk een verschil maakt",
+    "impactFirstAwardTitle": "Genomineerd voor Duurzame Dinsdag",
+    "impactSecondAwardTitle": "SoW & FloW: Samenwerkend experimenteren",
+    "impactThirdAwardTtile": "Winnaar van de Circular Challenge: Hoogbouw",
+    "impactFourthAwardTitle": "Versnelling bij het AMS Institute"
   }
 }

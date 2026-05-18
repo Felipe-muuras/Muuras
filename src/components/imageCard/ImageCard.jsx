@@ -4,7 +4,7 @@ export default function ImageCard({ imagePath, title, description }) {
   return (
     <>
       <ImageCardContainer>
-        <img src={`${import.meta.env.BASE_URL}${imagePath}`} alt={title} />
+        <img src={imagePath} alt={title} />
         <TextImageCard>
           <h1>{title}</h1>
           <p>{description}</p>

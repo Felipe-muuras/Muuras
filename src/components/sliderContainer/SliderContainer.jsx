@@ -1,3 +1,4 @@
+import { t } from 'i18next';
 import AwardCard from '../awardCard/AwardCard.jsx';
 
 import {
@@ -11,22 +12,22 @@ export default function SliderSection() {
   const awards = [
     {
       imagePath: '/assets/duurzame.png',
-      title: 'Nominated for Duurzame Dinsdag',
+      title: t('impactFirstAwardTitle'),
       link: '',
     },
     {
       imagePath: '/assets/regieorgaan.png',
-      title: 'SoW & FloW: Collaborative experimentation',
+      title: t('impactSecondAwardTitle'),
       link: '',
     },
     {
       imagePath: '/assets/CircularChallenge.png',
-      title: 'Winner of the Circular Challenge: High rise',
+      title: t('impactThirdAwardTtile'),
       link: '',
     },
     {
       imagePath: '/assets/amsterdamInstitute.png',
-      title: 'Boosting at the AMS Institute',
+      title: t('impactFourthAwardTitle'),
       link: '',
     },
   ];
@@ -34,8 +35,8 @@ export default function SliderSection() {
   return (
     <SliderContainer>
       <SliderSectiontitle>
-        <h2>Impact</h2>
-        <p>See how our work is making a difference</p>
+        <h2>{t('impactSectionTitle')}</h2>
+        <p>{t('impactSectionDescription')}</p>
       </SliderSectiontitle>
       <SliderTrack>
         {[...awards, ...awards].map((award, index) => (
