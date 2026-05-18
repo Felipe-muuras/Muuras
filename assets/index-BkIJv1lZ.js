@@ -324,7 +324,7 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
     font-size: 32px;
     font-weight: 200;
   }
-`;function tc({imagePath:e,title:t}){return(0,U.jsxs)($s,{children:[(0,U.jsx)(`img`,{src:`/${e}`,alt:t}),(0,U.jsx)(ec,{children:(0,U.jsx)(`h2`,{children:t})})]})}var nc=fs`
+`;function tc({imagePath:e,title:t}){return(0,U.jsxs)($s,{children:[(0,U.jsx)(`img`,{src:e,alt:t}),(0,U.jsx)(ec,{children:(0,U.jsx)(`h2`,{children:t})})]})}var nc=fs`
   from {
     transform: translateX(0);
   }
