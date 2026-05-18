@@ -3,6 +3,7 @@ import { primaryColor } from '../../utils/colors';
 
 export const GetStartedSectionContainer = styled.section`
   padding: 56px 56px;
+  z-index: 0;
 `;
 
 export const GetStartedCardContainer = styled.div`

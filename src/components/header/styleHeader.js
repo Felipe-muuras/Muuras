@@ -14,6 +14,8 @@ export const WrapperHeader = styled.div`
   align-items: center;
   display: flex;
   position: fixed;
+  z-index: 1;
+
   span {
     transition: 0.3s ease;
   }
@@ -22,6 +24,10 @@ export const WrapperHeader = styled.div`
     scale: 1.05;
     opacity: 0.8;
   }
+  /* Soft shadow */
+  box-shadow:
+    0px 4px 12px rgba(0, 0, 0, 0.08),
+    0px 12px 32px rgba(0, 0, 0, 0.12);
 `;
 
 export const WrapperLinks = styled.div`
@@ -44,19 +50,6 @@ export const StyledLink = styled(NavLink)`
 export const WrapperActions = styled.div`
   display: flex;
   column-gap: 1rem;
-  button {
-    background-color: ${primaryColor[500]};
-    border: none;
-    color: ${textColor.white};
-    padding: 8px 8px 8px 24px;
-    border-radius: 99px;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    column-gap: 8px;
-    cursor: pointer;
-    transition: 0.3s ease;
-  }
   button:hover {
     scale: 1.05;
   }
