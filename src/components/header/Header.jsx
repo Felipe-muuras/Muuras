@@ -6,21 +6,11 @@ import {
   StyledLink,
 } from './styleHeader';
 import { CaretDownIcon } from '@phosphor-icons/react';
-import { useState } from 'react';
 import Button from '../buttonAnimated/Button';
+import LanguageSelector from '../languageSelector/LanguageSelector';
 
 export default function Header() {
-  const {
-    t,
-    i18n: { changeLanguage, language },
-  } = useTranslation();
-  const [currentLanguage, setCurrentLanguage] = useState(language);
-
-  const handleChangeLanguage = () => {
-    const newLanguage = currentLanguage === 'en' ? 'du' : 'en';
-    changeLanguage(newLanguage);
-    setCurrentLanguage(newLanguage);
-  };
+  const { t } = useTranslation();
 
   return (
     <WrapperHeader>
@@ -36,7 +26,7 @@ export default function Header() {
         <StyledLink to="/products">{t('headerProductsLink')}</StyledLink>
       </WrapperLinks>
       <WrapperActions>
-        <button onClick={handleChangeLanguage}>Change Language</button>
+        <LanguageSelector label={t('selectorLanguageLabel')} />
         <Button label={t('headerContactLink')} />
       </WrapperActions>
     </WrapperHeader>
