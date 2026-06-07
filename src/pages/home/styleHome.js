@@ -85,3 +85,19 @@ export const ResilienceCardsContainer = styled.div`
   width: 100%;
   column-gap: 1rem;
 `;
+
+export const ResilientCitiesSection = styled.div`
+  max-width: 1200px;
+  row-gap: 2rem;
+  display: flex;
+  flex-direction: column;
+`;
+export const ResilientCitiesTitle = styled.h1`
+  font-size: 32px;
+`;
+
+export const ResilientCitiesCardsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  column-gap: 2rem;
+`;

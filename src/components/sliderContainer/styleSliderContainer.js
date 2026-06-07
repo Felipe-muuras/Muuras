@@ -4,32 +4,31 @@ const scroll = keyframes`
   from {
     transform: translateX(0);
   }
-
-to {
-  transform: translateX(calc(-50% - 12px));
-}
+  to {
+    transform: translateX(-50%);
+  }
 `;
 
 export const SliderContainer = styled.div`
   width: 100%;
-  height: fit-content;
   overflow: hidden;
   position: relative;
   display: flex;
   flex-direction: column;
   row-gap: 48px;
   justify-content: center;
-  align-items: center;
-  padding: 0 0 48px 0;
+  align-items: flex-start; /* era center */
+  padding: 48px 0;
 `;
 
 export const SliderSectiontitle = styled.div`
-  max-width: 1200px;
+  padding: 0 max(24px, calc((100% - 1200px) / 2));
   width: 100%;
   display: flex;
   flex-direction: column;
   row-gap: 8px;
   align-items: flex-start;
+
   h2 {
     font-size: 40px;
   }
@@ -38,10 +37,8 @@ export const SliderSectiontitle = styled.div`
 export const SliderTrack = styled.div`
   display: flex;
   width: max-content;
-  gap: 24px;
 
   animation: ${scroll} 40s linear infinite;
-
   will-change: transform;
 
   &:hover {
@@ -49,4 +46,6 @@ export const SliderTrack = styled.div`
   }
 `;
 
-export const Slide = styled.div``;
+export const Slide = styled.div`
+  margin-right: 24px;
+`;
