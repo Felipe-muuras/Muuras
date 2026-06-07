@@ -9,10 +9,15 @@ import {
   TopResilienceSection,
   ResilienceText,
   ResilienceCardsContainer,
+  ResilientCitiesSection,
+  ResilientCitiesCardsContainer,
+  ResilientCitiesTitle,
 } from './styleHome';
 import ImageCard from '../../components/imageCard/ImageCard';
 import GetStartedSection from '../../components/getStartedSection/GetStartedSection';
 import SliderSection from '../../components/sliderContainer/SliderContainer';
+import ResilientCitiesCard from '../../components/resilientCitiesCard/ResilientCitiesCard';
+import FormSection from '../../components/formSection/FormSection';
 
 export default function Home() {
   const { t } = useTranslation();
@@ -57,7 +62,27 @@ export default function Home() {
         </ResilienceCardsContainer>
       </ResilienceSection>
       <GetStartedSection />
+      <ResilientCitiesSection>
+        <ResilientCitiesTitle>
+          <h1>How we grow Resilient Cities </h1>
+        </ResilientCitiesTitle>
+        <ResilientCitiesCardsContainer>
+          <ResilientCitiesCard
+            imagePath={'/public/assets/ourServicesCardImage.png'}
+            title="Our services"
+            description="Driving sustainable urban impact through research-backed environmental restoration. Let’s build greener cities together."
+            cta="See our products"
+          />
+          <ResilientCitiesCard
+            imagePath={'/public/assets/ourProductsCardImage.png'}
+            title="Our products"
+            description="Turn wastewater into sustainable impact with bio-based solutions designed for greener, more resilient cities."
+            cta="See our services"
+          />
+        </ResilientCitiesCardsContainer>
+      </ResilientCitiesSection>
       <SliderSection />
+      <FormSection />
     </HomeContainer>
   );
 }

@@ -21,6 +21,8 @@
     "react-dom": "^19.2.5",
     "react-flags-select": "^2.5.0",
     "react-i18next": "^17.0.6",
+    "react-international-phone": "^4.8.0",
+    "react-phone-number-input": "^3.4.17",
     "react-router-dom": "^7.15.0",
     "styled-components": "^6.4.1"
   },
