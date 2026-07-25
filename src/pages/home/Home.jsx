@@ -1,5 +1,6 @@
 import Header from '../../components/header/Header';
 import { useTranslation } from 'react-i18next';
+import useSeo from '../../lib/useSeo';
 import ScrollDownButton from '../../components/scrollDownButton/ScrollDownButton';
 import {
   HomeContainer,
@@ -18,71 +19,106 @@ import GetStartedSection from '../../components/getStartedSection/GetStartedSect
 import SliderSection from '../../components/sliderContainer/SliderContainer';
 import ResilientCitiesCard from '../../components/resilientCitiesCard/ResilientCitiesCard';
 import FormSection from '../../components/formSection/FormSection';
+import FAQSection from '../../components/faqSection/FAQSection';
+import ZoomImage from '../../components/zoomImage/ZoomImage';
+import useScrollReveal from '../../hooks/useScrollReveal';
 
 export default function Home() {
   const { t } = useTranslation();
+  useScrollReveal();
+  useSeo('/');
+  const homeFaqItems = [
+    {
+      question: t('homeFaqQuestion1'),
+      answer: t('homeFaqAnswer1'),
+    },
+    {
+      question: t('homeFaqQuestion2'),
+      answer: t('homeFaqAnswer2'),
+    },
+    {
+      question: t('homeFaqQuestion3'),
+      answer: t('homeFaqAnswer3'),
+    },
+  ];
   //I need to create this to use the translation in the hero section, but I can also
   // use it in the header component, so I will create it there as well and pass the t function as a prop to the header
   // component, so I can use it there as well.
   return (
     <HomeContainer>
       <Header />
-      <HeroSection>
+      <HeroSection data-wipe-dark>
+
         <HeroContent>
-          <img src="/assets/whiteLogo.svg" alt="Muuras Logo" />
+          <img
+            src={`${import.meta.env.BASE_URL}assets/muuras-logo-white.svg`}
+            alt={t('homeHeroLogoAlt')}
+          />
           <h1>{t('heroTitle')}</h1>
           <p>{t('heroSubtitle')}</p>
         </HeroContent>
-        <ScrollDownButton text={t('homeScrollDownButton')} />
+        <ScrollDownButton
+          text={t('homeScrollDownButton')}
+          scrollTargetId="home-resilience"
+        />
       </HeroSection>
-      <ResilienceSection>
+      <ResilienceSection id="home-resilience" data-reveal data-header-theme="light">
         <TopResilienceSection>
-          <img src="/assets/resilienceTopImage.png" alt="Resilience Banner" />
+          <ZoomImage
+            className="resBanner"
+            src={`${import.meta.env.BASE_URL}assets/green-facade-climate-resilient-building.png`}
+            alt={t('homeResilienceBannerAlt')}
+          />
           <ResilienceText>
             <h2>{t('resilienceSectionTitle')}</h2>
             <p>{t('resilienceSectionDescription')}</p>
           </ResilienceText>
         </TopResilienceSection>
-        <ResilienceCardsContainer>
+        <ResilienceCardsContainer data-reveal-stagger>
           <ImageCard
-            imagePath="/assets/healthyEcosystemsCard.png"
+            imagePath={`${import.meta.env.BASE_URL}assets/healthy-ecosystems.png`}
             title={t('healthyEcosystemsCardTitle')}
             description={t('healthyEcosystemsCardDescription')}
           />
           <ImageCard
-            imagePath="/assets/coexistenceCard.png"
+            imagePath={`${import.meta.env.BASE_URL}assets/nature-city-coexistence.png`}
             title={t('CoexistenceCardTitle')}
             description={t('CoexistenceCardDescription')}
           />
           <ImageCard
-            imagePath="/assets/sustainableDevelopmentCard.png"
+            imagePath={`${import.meta.env.BASE_URL}assets/sustainable-development.png`}
             title={t('sustainableDevelopmentCardTitle')}
             description={t('sustainableDevelipmentCardDescription')}
           />
         </ResilienceCardsContainer>
       </ResilienceSection>
       <GetStartedSection />
-      <ResilientCitiesSection>
-        <ResilientCitiesTitle>
-          <h1>How we grow Resilient Cities </h1>
-        </ResilientCitiesTitle>
-        <ResilientCitiesCardsContainer>
+      <ResilientCitiesSection id="home-grow" data-reveal>
+        <ResilientCitiesTitle>{t('homeGrowTitle')}</ResilientCitiesTitle>
+        <ResilientCitiesCardsContainer data-reveal-stagger>
           <ResilientCitiesCard
-            imagePath={'/public/assets/ourServicesCardImage.png'}
-            title="Our services"
-            description="Driving sustainable urban impact through research-backed environmental restoration. Let’s build greener cities together."
-            cta="See our products"
+            imagePath={`${import.meta.env.BASE_URL}assets/muuras-services-preview.png`}
+            title={t('homeGrowServicesTitle')}
+            description={t('homeGrowServicesDescription')}
+            cta={t('homeGrowServicesCta')}
+            ctaPath="/services"
           />
           <ResilientCitiesCard
-            imagePath={'/public/assets/ourProductsCardImage.png'}
-            title="Our products"
-            description="Turn wastewater into sustainable impact with bio-based solutions designed for greener, more resilient cities."
-            cta="See our services"
+            imagePath={`${import.meta.env.BASE_URL}assets/muuras-products-preview.png`}
+            title={t('homeGrowProductsTitle')}
+            description={t('homeGrowProductsDescription')}
+            cta={t('homeGrowProductsCta')}
+            ctaPath="/products"
           />
         </ResilientCitiesCardsContainer>
       </ResilientCitiesSection>
       <SliderSection />
-      <FormSection />
+      <FAQSection
+        sectionId="home-faq"
+        title={t('homeFaqTitle')}
+        items={homeFaqItems}
+      />
+      <FormSection sectionId="home-contact" />
     </HomeContainer>
   );
 }

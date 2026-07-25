@@ -1,40 +1,86 @@
 import styled from 'styled-components';
-import PhoneInput from 'react-phone-number-input';
 
 import { primaryColor } from '../../utils/colors';
+import { radius } from '../../utils/radius';
 
 export const FormSectionContainer = styled.div`
   width: 100%;
   display: flex;
-  justify-content: center;
-  padding: 64px 0px;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 0 0;
+  scroll-margin-top: 120px;
 
   background-color: ${primaryColor[900]};
+
+  @media (max-width: 360px) {
+    padding: 56px 0 0;
+  }
 `;
 
 export const FormSectionSizeControll = styled.div`
-  max-width: 1200px;
+  max-width: 1440px;
+  width: 100%;
+  padding: 0 24px 80px;
 
   display: flex;
-  column-gap: 4rem;
+  column-gap: 5rem;
+
+  @media (max-width: 960px) {
+    flex-direction: column;
+    row-gap: 2.5rem;
+  }
+
+  @media (max-width: 360px) {
+    padding: 0 16px 56px;
+  }
 `;
 
 export const BringMuuras = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.25rem;
 
   width: 50%;
 
   color: #fff;
 
-  h1 {
+  h2 {
     font-size: 2.5rem;
+    line-height: 1.1;
   }
 
-  img {
+  span {
+    color: rgba(255, 255, 255, 0.72);
+    line-height: 1.55;
+    max-width: 46ch;
+  }
+
+  @media (max-width: 960px) {
     width: 100%;
-    border-radius: 24px;
+  }
+
+  @media (max-width: 360px) {
+    h2 {
+      font-size: 2rem;
+    }
+  }
+`;
+
+/* Rounded frame that clips the image so it can zoom in slightly on hover. */
+export const ImageFrame = styled.div`
+  overflow: hidden;
+  border-radius: ${radius.xl};
+  margin-top: 0.5rem;
+
+  img {
+    display: block;
+    width: 100%;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  &:hover img {
+    transform: scale(1.06);
   }
 `;
 
@@ -44,23 +90,66 @@ export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  row-gap: 1rem;
+  row-gap: 1.25rem;
 
   color: #fff;
 
+  h2 {
+    font-size: 2rem;
+    line-height: 1.15;
+    margin-bottom: 0.25rem;
+  }
+
+  /* Minimalist translucent fields that sit on the dark-green panel, with a
+     clear brand-green focus state. */
   input,
   textarea {
     width: 100%;
-    padding: 1rem;
-    border-radius: 8px;
-    border: none;
-    font-family: sans-serif;
+    padding: 0.9rem 1rem;
+    border-radius: ${radius.md};
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+    font-family: var(--font-body);
+    font-size: 15px;
+    transition:
+      border-color 0.2s ease,
+      background 0.2s ease,
+      box-shadow 0.2s ease;
   }
-  button {
-    background-color: #fff;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 8px;
+
+  input::placeholder,
+  textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  input:hover,
+  textarea:hover {
+    border-color: rgba(255, 255, 255, 0.28);
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-color: ${primaryColor[400]};
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 0 3px rgba(77, 170, 87, 0.2);
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 140px;
+  }
+
+  @media (max-width: 960px) {
+    width: 100%;
+  }
+
+  @media (max-width: 360px) {
+    input,
+    textarea {
+      padding: 0.8rem 0.9rem;
+    }
   }
 `;
 
@@ -68,22 +157,111 @@ export const FormRowTwoInputs = styled.div`
   display: flex;
   column-gap: 1rem;
   width: 100%;
-  input {
+
+  > div {
     width: 50%;
+  }
+
+  @media (max-width: 560px) {
+    flex-direction: column;
+    row-gap: 1.25rem;
+
+    > div {
+      width: 100%;
+    }
   }
 `;
 
-export const StyledPhoneInput = styled(PhoneInput)`
-  width: 50%;
-  height: 48px;
+export const FormField = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+`;
 
-  .PhoneInputInput {
-    border: none;
-    outline: none;
-    width: 50%;
+/* Quiet, tracked uppercase label — consistent with the footer eyebrows. */
+export const FormFieldLabel = styled.label`
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+`;
+
+export const ConsentRow = styled.div`
+  display: flex;
+  align-items: flex-start;
+  column-gap: 12px;
+  margin-top: 0.25rem;
+
+  input {
+    width: 18px;
+    height: 18px;
+    flex: none;
+    margin-top: 2px;
+    accent-color: ${primaryColor[400]};
+    cursor: pointer;
   }
 
-  .PhoneInputCountry {
-    margin-right: 12px;
+  label {
+    font-size: 13px;
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.7);
+  }
+`;
+
+/* Submit follows the DS button language: a green pill with an arrow that
+   nudges forward, lifting on hover. */
+export const SubmitButton = styled.button`
+  align-self: flex-start;
+  margin-top: 0.5rem;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  background: ${primaryColor[500]};
+  color: #ffffff;
+  border: none;
+  border-radius: ${radius.pill};
+  padding: 13px 26px;
+
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+  svg {
+    transition: transform 0.25s ease;
+  }
+
+  &:hover:not(:disabled) {
+    background: ${primaryColor[600]};
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22);
+  }
+
+  &:hover:not(:disabled) svg {
+    transform: translateX(3px);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  @media (max-width: 360px) {
+    width: 100%;
+    justify-content: center;
   }
 `;
