@@ -34,8 +34,19 @@ export default function FormSection({ sectionId = 'contact' }) {
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
+    // EmailJS not configured yet — fall back to the visitor's mail client so
+    // the form still works (opens a pre-filled email to the team).
     if (!serviceId || !templateId || !publicKey) {
-      alert(t('contactConfigError'));
+      const subject = encodeURIComponent(
+        `Formulário do Site — Contato de ${name}`,
+      );
+      const body = encodeURIComponent(
+        `Nome: ${name}\n` +
+          `Organização: ${organization || '-'}\n` +
+          `E-mail: ${email}\n\n` +
+          `Mensagem:\n${message}`,
+      );
+      window.location.href = `mailto:felipe@muuras.nl,gijs@muuras.nl?subject=${subject}&body=${body}`;
       return;
     }
 
