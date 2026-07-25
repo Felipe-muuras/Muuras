@@ -1,8 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200;400;600;700&family=Work+Sans:wght@200;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 
 :root {
   --font-heading: 'Crimson Pro', serif;
   --font-body: 'Work Sans', sans-serif;
+
+  /* Responsive heading scale (rem). Page heroes and section titles reference
+     these tokens so the whole hierarchy scales together at each breakpoint. */
+  --fs-hero: 3.5rem; /* 56px */
+  --fs-section: 3rem; /* 48px */
+}
+
+@media (max-width: 960px) {
+  :root {
+    --fs-hero: 2.75rem; /* 44px */
+    --fs-section: 2.25rem; /* 36px */
+  }
+}
+
+@media (max-width: 560px) {
+  :root {
+    --fs-hero: 2.125rem; /* 34px */
+    --fs-section: 1.75rem; /* 28px */
+  }
 }
 
 *,
@@ -13,9 +33,120 @@
   box-sizing: border-box;
 }
 
+html,
 body {
-  font-weight: 300;
+  width: 100%;
+  /* Safety net against horizontal scroll on mobile. Uses `clip` (not
+     `hidden`) on purpose: `hidden` turns the element into a scroll container,
+     which caused a stutter on the first scroll. `clip` clips the same overflow
+     without creating a scroll container. */
+  overflow-x: clip;
+}
+
+/* Note: no global `scroll-behavior: smooth` — it made wheel/trackpad
+   scrolling feel janky (a stutter on the first scroll). In-page anchor
+   scrolling is already smoothed in JS (ScrollToHash / ScrollDownButton via
+   scrollIntoView), so native scrolling stays snappy here. */
+
+/* Anchor targets stop below the fixed header instead of under it. */
+[id] {
+  scroll-margin-top: 104px;
+}
+
+/* Page entrance transition. Opacity only — a transform here would turn
+   the fixed header into an absolutely-positioned element. */
+@keyframes pageFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Scroll-reveal: sections start hidden and fade + rise into view as they
+   enter the viewport (driven by useScrollReveal). The first/hero section
+   carries no [data-reveal], so it shows immediately on page load. */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Staggered children: a [data-reveal-stagger] container reveals its direct
+   children one after another (each child's --reveal-delay is set by
+   useScrollReveal) for a cascading, hierarchical fade-in inside a section.
+   A CSS animation is used (not a transition) so it never interferes with the
+   children's own hover transitions; once it finishes, useScrollReveal tags the
+   child .reveal-done to drop the animation and hand control back to CSS. */
+[data-reveal-stagger] > * {
+  opacity: 0;
+}
+
+[data-reveal-stagger].is-visible > * {
+  animation: revealRise 0.6s ease both;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+[data-reveal-stagger] > .reveal-done {
+  animation: none;
+  opacity: 1;
+}
+
+@keyframes revealRise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  /* Never hide content behind a reveal for reduced-motion users. */
+  [data-reveal],
+  [data-reveal-stagger] > * {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+html {
+  /* Footer green fills the overscroll/bounce area at the bottom on mobile
+     (iOS) so it never shows a white strip below the footer. */
+  background-color: #204725;
+}
+
+body {
+  /* White canvas for the light content sections (so they don't inherit
+     the green html background). */
+  background-color: #ffffff;
+  font-weight: 400;
   font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -31,4 +162,15 @@ h5,
 h6 {
   font-family: var(--font-heading);
   font-weight: 400;
+}
+
+/* Google Material Symbols — base defaults; size/color are set per usage. */
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+  line-height: 1;
+  user-select: none;
 }

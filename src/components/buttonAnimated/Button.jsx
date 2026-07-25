@@ -8,10 +8,22 @@ import {
 
 import { primaryColor } from '../../utils/colors';
 
-export default function Button({ label }) {
+export default function Button({ label, scrollTargetId, fitContent = false }) {
+  const handleClick = () => {
+    const targetElement = scrollTargetId
+      ? document.getElementById(scrollTargetId)
+      : null;
+
+    if (!targetElement) {
+      return;
+    }
+
+    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
-    <WrapperButton>
-      <ButtonText>{label}</ButtonText>
+    <WrapperButton type="button" onClick={handleClick} $fitContent={fitContent}>
+      <ButtonText $fitContent={fitContent}>{label}</ButtonText>
 
       <HoverLayer>
         <HoverText>{label}</HoverText>

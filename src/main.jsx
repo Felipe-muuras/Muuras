@@ -5,9 +5,11 @@ import './index.css';
 import './lib/i18n';
 
 import AppRoutes from './appRoutes.jsx';
+import Preloader from './components/preloader/Preloader.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <Preloader />
     <AppRoutes />
   </StrictMode>,
 );
