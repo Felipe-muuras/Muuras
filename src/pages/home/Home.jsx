@@ -5,6 +5,7 @@ import ScrollDownButton from '../../components/scrollDownButton/ScrollDownButton
 import {
   HomeContainer,
   HeroSection,
+  HeroVideo,
   HeroContent,
   ResilienceSection,
   TopResilienceSection,
@@ -48,6 +49,19 @@ export default function Home() {
     <HomeContainer>
       <Header />
       <HeroSection data-wipe-dark>
+        <HeroVideo
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster={`${import.meta.env.BASE_URL}assets/hero-background-water-poster.jpg`}
+        >
+          <source
+            src={`${import.meta.env.BASE_URL}assets/hero-background-water.mp4`}
+            type="video/mp4"
+          />
+        </HeroVideo>
 
         <HeroContent>
           <img
