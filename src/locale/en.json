@@ -3,13 +3,16 @@
     "headerHomeLink": "Home",
     "headerServicesLink": "Services",
     "headerProductsLink": "Products",
+    "headerAboutLink": "About Us",
     "selectorLanguageLabel": "Select a language",
     "headerContactLink": "Contact",
     "heroTitle": "Growing Resilient Cities",
     "heroSubtitle": "Muuras fosters bio-based solutions that support sustainable urban ecosystems.",
+    "homeHeroLogoAlt": "Muuras logo",
     "homeScrollDownButton": "Know more about Muuras",
     "resilienceSectionTitle": "Restoring Natural Resilience:",
     "resilienceSectionDescription": "Resilient cities are the future of urban living. Resilient cities keep humans safe, sheltered, and healthy in the face of extreme weather, pollution, and climate change. Muuras collaborates with nature to fulfil its mission: restoring the resilience of cities to safeguard life itself.",
+    "homeResilienceBannerAlt": "Green living wall covering a glass building facade in a climate-resilient city",
     "healthyEcosystemsCardTitle": "Healthy ecosystems",
     "healthyEcosystemsCardDescription": "Like all living beings, humans need a healthy home (eco comes from the greek word for home: ‘oikos’), where they can drink clean water, eat clean food, and breathe clean air. Resilient cities provide healthy homes not just by avoiding unnecessary pollution, but also by actively removing existing pollutants from the environment.",
     "CoexistenceCardTitle": "Coexistence",
@@ -18,11 +21,187 @@
     "sustainableDevelipmentCardDescription": "‘If you’re not growing you’re dying’, so resilient cities are always in development. Being ready for the future requires finding new ways of being, of organizing ourselves, of building (infra)structures, of using our resources. Every day, we use what we have to make life in the city a little better, without placing a burden on another place or time.",
     "getStartSectionTitle": "How to get started with Muuras?",
     "getStartSectionDescription": "Simply contact us, by email or the contact sheet at the bottom of the page, with your project needs—our team will recommend the service package that best supports your goals.",
+    "homeGetStartedImageAlt": "Hands catching splashing fresh water in warm sunlight",
+    "homeGetStartedCta": "Contact",
+    "homeGrowTitle": "How we grow Resilient Cities",
+    "homeGrowServicesTitle": "Our services",
+    "homeGrowServicesDescription": "Driving sustainable urban impact through research-backed environmental restoration. Let’s build greener cities together.",
+    "homeGrowServicesCta": "See our services",
+    "homeGrowProductsTitle": "Our products",
+    "homeGrowProductsDescription": "Turn wastewater into sustainable impact with bio-based solutions designed for greener, more resilient cities.",
+    "homeGrowProductsCta": "See our products",
     "impactSectionTitle": "Impact",
     "impactSectionDescription": "See how our work is making a difference",
     "impactFirstAwardTitle": "Nominated for Duurzame Dinsdag",
     "impactSecondAwardTitle": "SoW & FloW: Collaborative experimentation",
     "impactThirdAwardTtile": "Winner of the Circular Challenge: High rise",
-    "impactFourthAwardTitle": "Boosting at the AMS Institute"
+    "impactFourthAwardTitle": "Boosting at the AMS Institute",
+    "servicesPageTitle": "Our services",
+    "servicesPageSubtitle": "We help organizations transition to resilient, circular, and future-ready water and sustainability systems through practical, science-based services.",
+    "servicesHeroScrollCta": "Discover our services",
+    "servicesHowWeDeliver": "How We Deliver",
+    "servicesCardTitle1": "Policy and Environmental Impact Assessments",
+    "servicesCardDescription1": "We assess environmental impact, policy fit, and implementation potential so your project decisions are aligned with regulations and long-term sustainability goals.",
+    "servicesCardBullet11": "Life cycle and impact assessment support.",
+    "servicesCardBullet12": "Policy analysis and implementation guidance.",
+    "servicesCardBullet13": "Stakeholder-aware reporting recommendations.",
+    "servicesCardTitle2": "Sustainability Reporting and Strategy",
+    "servicesCardDescription2": "From ESG narratives to measurable action plans, we support companies in building clear sustainability strategies and reporting progress with confidence.",
+    "servicesCardBullet21": "ESG and sustainability baseline definition.",
+    "servicesCardBullet22": "Roadmaps with measurable milestones.",
+    "servicesCardBullet23": "Governance-oriented reporting structure.",
+    "servicesCardTitle3": "Technological and Process Optimization",
+    "servicesCardDescription3": "We evaluate and optimize technical systems for water efficiency, circularity, and performance by combining audits, process analysis, and implementation guidance.",
+    "servicesCardBullet31": "System audits for performance bottlenecks.",
+    "servicesCardBullet32": "Digital-model supported optimization paths.",
+    "servicesCardBullet33": "Circular process redesign recommendations.",
+    "servicesCardTitle4": "Research & Development and Case Studies",
+    "servicesCardDescription4": "We collaborate on pilot research, innovation tracks, and applied case studies that turn promising ideas into tested, real-world solutions.",
+    "servicesCardBullet41": "Pilot and experimental setup design.",
+    "servicesCardBullet42": "Case-study based learning loops.",
+    "servicesCardBullet43": "Implementation-ready insight packages.",
+    "servicesDifferentiatorsTitle": "Our Differentiators",
+    "servicesDifferentiator1": "Science-based and implementation-focused.",
+    "servicesDifferentiator2": "Tailor-made service packages per project.",
+    "servicesDifferentiator3": "Cross-disciplinary team with policy and technical expertise.",
+    "servicesDifferentiator4": "Strong focus on circular and resilient outcomes.",
+    "servicesDifferentiatorsDescription": "Behind every project is a cross-disciplinary team that turns science and years of hands-on experience into tailored, resilient solutions.",
+    "servicesBenefitsTitle": "Benefits for Your Organization",
+    "servicesBenefitsDescription": "Our services are designed to create measurable value while helping your team move faster with confidence.",
+    "servicesBenefitCardTitle1": "Resource Efficiency",
+    "servicesBenefitCardDescription1": "Reduce avoidable waste and improve cost-performance balance in operations.",
+    "servicesBenefitCardTitle2": "Compliance Readiness",
+    "servicesBenefitCardDescription2": "Prepare your organization for evolving legal and reporting requirements.",
+    "servicesBenefitCardTitle3": "Strategy to Execution",
+    "servicesBenefitCardDescription3": "Turn sustainability goals into practical actions your teams can apply.",
+    "servicesBenefitCardTitle4": "Evidence-based Decisions",
+    "servicesBenefitCardDescription4": "Support leadership with reliable technical and environmental insights.",
+    "contactSectionTitle": "Bring Muuras to your project",
+    "contactSectionDescription": "We\u2019re eager to get to know you. Tell us about yourself and about your project! We will be in touch with you by email as soon as possible.",
+    "contactImageAlt": "Muuras Wetland Wall prototype installed outdoors with a team member beside it",
+    "contactFormTitle": "Contact us",
+    "contactNameLabel": "Name",
+    "contactNamePlaceholder": "Enter your full name",
+    "contactOrganizationLabel": "Name of organization",
+    "contactOrganizationPlaceholder": "Name of organization",
+    "contactEmailLabel": "Email address",
+    "contactEmailPlaceholder": "Enter your email",
+    "contactMessageLabel": "Your message",
+    "contactMessagePlaceholder": "Write your story...",
+    "contactConsent": "I agree to be contacted regarding a proposal and technical assessment",
+    "contactSendButton": "Send",
+    "contactSendingButton": "Sending...",
+    "contactSubmitSuccess": "Form submitted successfully!",
+    "contactSubmitError": "Could not send your message. Please try again.",
+    "contactConfigError": "Contact form is not configured yet. Please set EmailJS environment keys.",
+    "homeFaqTitle": "Frequently Asked Questions",
+    "homeFaqQuestion1": "What does “Muuras” mean?",
+    "homeFaqAnswer1": "“Muuras” is a compound word combining the Dutch words for wall (muur) and marsh (moeras). This refers to our Wetland Wall technology, which, true to our Dutch heritage of water innovation, combines the natural purifying abilities of wetland ecosystems with the space-efficiency of green walls.",
+    "homeFaqQuestion2": "In what countries do you work?",
+    "homeFaqAnswer2": "We are ready to provide our products and services in any country inside the European Union. Our team operates from different countries across the EU and speaks English, Dutch, Greek, Portuguese, and Spanish. We are happy to work on innovative projects related to water management, urban sustainability, and policy development outside the EU as well, if it’s in collaboration with local partners.",
+    "homeFaqQuestion3": "How can I get started working with Muuras?",
+    "homeFaqAnswer3": "Simply contact us, by email or the contact sheet at the bottom of the page, with your project needs—our team will recommend the service package that best supports your goals.",
+    "servicesFaqTitle": "Services FAQ",
+    "servicesFaqQuestion1": "Why should I invest in sustainability reporting and/or system performance?",
+    "servicesFaqAnswer1": "Assessing the environmental, social, and technical performance of your products and practices is not just essential for guaranteeing the sustainability of the planet, but it is core to the sustained success of your business as well. Sustainability reporting has become a standard requirement for any sizeable company operate, and helps business by identifying inefficiencies and risks in their practices from cradle-to-grave. By knowing and addressing these issues, through internal policy changes and technical improvements, we make sure you get the most out of your resources and ensure a resilient, ethical, and secure supply chain. Reporting on these impacts and improvements also ensures complicity with current and ever tighten legal requirements. In short, our services help you maximize your efficiency now, and prepare you for the future!",
+    "servicesFaqQuestion2": "Why should I pick Muuras over others?",
+    "servicesFaqAnswer2": "Muuras has a young and dynamic team with a broad set of skills and professional experiences. For this reason, we can provide a unique combination of services, which we customize to the specific needs of your project. We also lend insights from a wide range of different perspectives, informed by our experience working inside the fields of sustainability reporting, policy analysis and formulation, system optimization, and circular entrepreneurship.",
+    "servicesFaqQuestion3": "How does Muuras support sustainability reporting?",
+    "servicesFaqAnswer3": "Muuras contributes to the transition towards greener and more resilient ways of living and producing by assessing and reporting on the impact of company’s production processes. Through Life Cycle Assessments (LCAs) and environmental, social and governance (ESG) reporting, we help organizations meet sustainability goals and regulatory expectations.",
+    "servicesFaqQuestion4": "How does Muuras improve technological and water system performance?",
+    "servicesFaqAnswer4": "We conduct system audits to assess the efficiency, resilience, and circularity of the resources and processes you use. Then, we build process models, run simulations, and use digital twins, to design actionable optimization strategies that maximize the technical and environmental performance of your technology.",
+    "servicesFaqQuestion5": "How does Muuras work on Research & Development projects?",
+    "servicesFaqAnswer5": "We love collaborating on practice-oriented research and the development of new innovations that may contribute to more resilient cities. In the field of technology, we are happy to think along in the design of the design and business case of technical innovations, and we help design and execute physical experimental setups that lead to real-life implementation. We research the efficacy of existing policy approaches and sustainability strategies in implementing eco-friendly and biobased solutions, and help identifying best practices and recommend new approaches, by means of case studies, social and environmental impact assessments, and stakeholder research.",
+    "servicesFaqQuestion6": "Who uses Muuras’ Services?",
+    "servicesFaqAnswer6": "We are commonly hired by private parties that aim to improve environmental performance, meet regulations, or advance sustainability strategies, incl. construction companies, and (communities of) home owners, as well as by local and regional governmental institutions. We regularly collaborate with universities, innovation institutes, and other small enterprises and application-focused research projects.",
+    "servicesFaqQuestion7": "What steps do you follow when providing a service?",
+    "servicesFaqAnswer7": "We start each project with an orientation meeting and provide a non-binding project proposal. We then agree on the scope of the project, including components, steps, deadlines, timelines, and evaluation moments. After executing the project and delivering the final products, we organize a closing meeting to reflect on the project and share any additional findings and ideas.",
+    "servicesFaqQuestion8": "What components do your services contain?",
+    "servicesFaqAnswer8": "Each project is tailor-made to the needs of our customers and/or collaborators, so the components of our projects are a different combination of the services we offer each time. If you are interested in working with us, we have an orientation meeting to get to know each other and identify what services your project needs. We then provide you with a proposal outlining the package of services that we recommend and the according time allocation and costs, and make an agreement with you regarding the specifics of the project before we start.",
+    "productsPageTitle": "Introduction to wetland walls",
+    "productsPageSubtitle": "Muuras’s products are designed to advance our commitment to reintroduce endemic ecosystems in urban areas, improving surface water quality and fostering healthier urban environments. To achieve this, Muuras develops a range of innovative solutions that bring ecological functions back into cities. Our key products include:",
+    "productsHeroScrollCta": "Discover our products",
+    "productsSectionTitle1": "About Wetlands",
+    "productsSectionDescription1": "Wetlands are nature’s water filter: they remove pollutants from surface water and turn them into nutrients for plants to grow. The unique water-logged environment of wetland ecosystems is home to communities of plants and microbes that turn harmful atmospheric nitrogen and carbon dioxide into a thriving habitat for all kinds of life. In this environment, heavy metals, chemical pollutants, and harmful bacteria are removed and processed, and clean water and oxygen are released in return. Because of their capacity to retain water, wetlands also function as sponges that prevent floods when it rains a lot and store clean water for times of drought.",
+    "productsSectionTitle2": "Harnessing Nature’s Potential",
+    "productsSectionDescription2": "Oftentimes, useful wetlands have to make way for urban development, but no more: Muuras has developed a solution that allows us to benefit from these wetland functions while living in the city. Our Wetland Walls are a modular, vertical living wall system inspired by natural wetland environments. These systems are not just beautiful to look at: they purify urban wastewater and allow you to reuse it within the building, and they improve building insulation. This means you can save on your water and heating bills all at once, all while making your space a more pleasant place to live and/or work and boosting its sustainability.",
+    "productsSectionTitle3": "Wetland Wall Features",
+    "productsFeatureItem1": "Natural filtration of pollutants from water sources.",
+    "productsFeatureItem2": "Improves urban cooling and reduces heat island effects.",
+    "productsFeatureItem3": "Creates habitats for pollinators and small wildlife.",
+    "productsFeatureItem4": "Reduces eutrophication risk in water bodies.",
+    "productsFeatureItem5": "Supports circular economy principles by upcycling wastewater by-products.",
+    "productsFeatureItem6": "Removes heavy metals, pharmaceuticals, and organic pollutants.",
+    "productsFeatureItem7": "Enhances groundwater recharge and flood resilience.",
+    "productsFeatureItem8": "Adaptable to industrial, municipal, and decentralized treatment systems.",
+    "productsClosingText": "Our Wetland Wall technology is one way to practically advance our commitment to reintroduce endemic ecosystems in urban areas, improving surface water quality and fostering healthier urban environments. We’d love to grow resilient cities with you, so please inquire to discuss how to make Wetland Walls work for you!",
+    "productsGetStartedTitle": "How to get started with Muuras?",
+    "productsGetStartedDescription": "Simply contact us, by email or the contact sheet at the bottom of the page, with your project needs—our team will recommend the service package that best supports your goals.",
+    "productsGetStartedCta": "Contact",
+    "productsGetStartedImageAlt": "Hands catching splashing fresh water in sunlight",
+    "productsFaqTitle": "Products FAQ",
+    "productsFaqQuestion1": "What are Wetland Walls?",
+    "productsFaqAnswer1": "Our Wetland Walls are living green walls that contain native wetland plants and soil dynamics. These systems emulate natural wetland ecosystems and the services they provide (water purification, water buffering, carbon capture, climate regulation, shelter and food for wildlife, and more), in a space-efficient way. This creates a visually appealing facade that allows humans to live healthily and peacefully side-by-side with other animals and native plant species.",
+    "productsFaqQuestion2": "What distinguishes Muuras from other living walls?",
+    "productsFaqAnswer2": "Most living walls waste drinking water and fertilizer to operate, and they often integrate invasive plant species. We believe that this is costly and unsustainable, especially in the face of growing drought and fertilizer shortages. Muuras’ Wetland Walls use residential wastewater to feed and water the native plants in the wall, reducing costs for users and relieving pressure on drinking water sources.",
+    "productsFaqQuestion3": "How does a Muuras system purify water?",
+    "productsFaqAnswer3": "Muuras constitutes an artificial wetland ecosystem that accomplishes water purification in a four-step process: 1. Separation of wastewater streams: Nutrient-rich and lightly polluted greywater are separated from more harmful waste streams. 2. Storage & sanitation: The wastewater is sanitized by means of short-term storage, during which aerobic bacteria start breaking down the nutrients contained in the water and eliminate harmful pathogens. 3. Irrigation & filtration: Sanitized wastewater flows through the living wall, in which nutrients and other pollutants are bound by substrates, broken down further by anaerobic bacteria, and ultimately assimilated into the biomass of the plants or released into the atmosphere as natural compounds. 4. Recovery & reuse: Purified water is collected and ready to be reused for non-potable purposes.",
+    "productsFaqQuestion4": "What type of buildings are suitable for installing a Muuras facade?",
+    "productsFaqAnswer4": "All buildings with available space on their facade or inside walls have the potential to get their own Muuras wetland wall. Certain factors can help you determine how easily our system can be applied to your building: Bigger systems are more cost-effective, and the presence of urinals, USTs or greywater diversion systems, as well as piping that is easily accessible, facilitate the installation of our system.",
+    "productsFaqQuestion5": "Who is the Muuras system for?",
+    "productsFaqAnswer5": "Our system works for everyone: plants, humans, and other animals. We made sure that our green wall is beneficial to the person paying for it, as well as for anyone who might walk by. Our main customers are architects, developers and VvE’s (Home Owners Associations), but Muuras systems are suitable for businesses and organizations just as well.",
+    "productsFaqQuestion6": "What benefits does a Muuras system offer to the users?",
+    "productsFaqAnswer6": "Aside from getting to enjoy the sight of our plants everyday (which has scientifically been proven to boost mental health), a Muuras offers a myriad of financial and personal benefits to users as well. The system allows for the reuse of water and helps with the thermal and noise insulation of your home, making your home more comfortable and reducing your spending on utility bills.",
+    "productsFaqQuestion7": "What types of wastewater does Muuras recycle?",
+    "productsFaqAnswer7": "Our Wetland Walls can use either pure greywater from bathrooms, kitchens, and laundry rooms, or a mixture of greywater and nutrient-rich urine at a ratio of roughly 20:1. To safely use urine, it is separated at the source by USTs (Urine Separating Toilets) and stored in a segmented septic tank according to WHO’s guidelines for safe irrigation practices, before being mixed with greywater.",
+    "productsFaqQuestion8": "Does a Muuras facade smell bad?",
+    "productsFaqAnswer8": "We use well-established technologies to make sure our system operates safely and without producing odors. As water flows through the system, it always remains underneath the soil level, making sure gases are broken down into natural compounds before escaping. We use fragrant flowers such as water mint to actually make your wall smell better than before.",
+    "productsFaqQuestion9": "Do the plants in the Muuras facade die off?",
+    "productsFaqAnswer9": "Our aquatic plants are the star of the show, so we like to take good care of them. We exclusively use perennial plants that can handle the stress of frost, shade and wind and grow back up every year. To make sure plants remain healthy, beautiful and productive, we will come to maintain the facade twice a year.",
+    "productsFaqQuestion10": "Do I need a permit for installing a Muuras facade?",
+    "productsFaqAnswer10": "In most cases, you will need an environmental permit (omgevingsvergunning) to install a green wall of any kind on the facade of your home. Depending on in what municipality you are located, requirements for requesting such a permit may differ. In some cases, such as for historic buildings, additional permits may be necessary. Luckily, most municipalities have an invested interest in green walls and will have a positive attitude towards installing them.",
+    "productsFaqQuestion11": "Are there subsidies available for installing a Muuras facade?",
+    "productsFaqAnswer11": "In the face of changing weather patterns, local and national governments have recently become aware of the need for resilient, climate adaptive cities. Therefore, they have a stake in increasing the amount of green spaces in their cities in space-efficient ways. Most major cities and some large towns offer subsidies to help fund green facades and roofs, while others have funding available for simply creating green spaces. Check with your municipality to see what support is available to you, or get in touch with us to help you on your way!"
+    ,"aboutMissionTitle": "Muuras' Mission"
+    ,"aboutMissionDescription": "We believe in a future where cities work with nature rather than against it. Our mission is to create resilient, water-abundant environments that are self-sustaining, reduce pollution, and restore ecological balance. Our aim is to:"
+    ,"aboutMissionBullet1": "Reduce reliance on chemical-intensive water treatments."
+    ,"aboutMissionBullet2": "Minimize water waste and promote circular economy principles."
+    ,"aboutMissionBullet3": "Improve biodiversity and create healthier urban spaces."
+    ,"aboutMissionBullet4": "Help businesses and policymakers transition to sustainable water governance."
+    ,"aboutMissionImageAlt": "Water droplet splash forming a crown on a calm natural pond"
+    ,"aboutValuesTitle": "Our Values"
+    ,"aboutValuesImageAlt": "Two large old trees with sunlight shining through the forest canopy"
+    ,"aboutValueTitle1": "Innovation with Purpose"
+    ,"aboutValueDescription1": "We embrace forward-thinking solutions to solve complex water challenges."
+    ,"aboutValueTitle2": "Collaboration & Knowledge Sharing"
+    ,"aboutValueDescription2": "We build networks that connect experts, policymakers, and industry leaders."
+    ,"aboutValueTitle3": "Sustainability as a Standard"
+    ,"aboutValueDescription3": "We integrate circular economy principles into every project we undertake."
+    ,"aboutValueTitle4": "Scientific Integrity"
+    ,"aboutValueDescription4": "We ground our recommendations in evidence-based methods and transparent analysis."
+    ,"aboutValueTitle5": "Resilience & Adaptability"
+    ,"aboutValueDescription5": "We develop solutions that can withstand climate challenges and evolving regulations."
+    ,"aboutValuesCta": "Create resilient, water-abundant environments"
+    ,"aboutTeamTitle": "Our team"
+    ,"aboutTeamDescription": "Meet our passionate team of environmental engineers, sustainability experts, and policy advisors!"
+    ,"aboutTeamMemberName1": "Felipe Oliveira"
+    ,"aboutTeamMemberRole1": "Environmental Engineer"
+    ,"aboutTeamHoverTitle1": "Systems Perspective"
+    ,"aboutTeamHoverDescription1": "Focuses on integrating ecological treatment systems into practical urban infrastructure."
+    ,"aboutTeamLinkedin1": "https://www.linkedin.com/in/felipeoliveira95/"
+    ,"aboutTeamMemberName2": "Gijs Romijn"
+    ,"aboutTeamMemberRole2": "Sustainability Strategist"
+    ,"aboutTeamHoverTitle2": "Policy to Practice"
+    ,"aboutTeamHoverDescription2": "Bridges sustainability strategy with policy context and implementation pathways."
+    ,"aboutTeamLinkedin2": "https://www.linkedin.com/in/gijs-romijn-a45995108/"
+    ,"aboutTeamMemberName3": "Lydia Peraki"
+    ,"aboutTeamMemberRole3": "Research & Partnerships"
+    ,"aboutTeamHoverTitle3": "Collaboration Engine"
+    ,"aboutTeamHoverDescription3": "Builds partnerships across research, governance, and industry for real-world impact."
+    ,"aboutTeamLinkedin3": "https://www.linkedin.com/in/lydia-peraki-034417159/"
+    ,"aboutGetStartedTitle": "How to get started with Muuras?"
+    ,"aboutGetStartedDescription": "Simply contact us, by email or the contact sheet at the bottom of the page, with your project needs—our team will recommend the service package that best supports your goals."
+    ,"aboutGetStartedCta": "Contact"
+    ,"aboutGetStartedImageAlt": "Hands catching splashing fresh water in sunlight"
   }
 }

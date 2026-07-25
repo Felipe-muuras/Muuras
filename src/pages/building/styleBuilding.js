@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import { primaryColor } from '../../utils/colors';
-import heroBackground from '/assets/heroBackground.gif';
+import heroBackground from '/assets/hero-background-water.gif';
 
 export const WrapperBuildingPage = styled.div`
   width: 100%;
   height: 100dvh;
+  animation: pageFade 0.45s ease both;
   background-color: ${primaryColor[900]};
   background-image: url(${heroBackground});
   background-repeat: no-repeat;

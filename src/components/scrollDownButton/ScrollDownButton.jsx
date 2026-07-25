@@ -1,12 +1,26 @@
-import { CaretDownIcon } from '@phosphor-icons/react';
+import { WrapperScrollDownButton, MouseScroll } from './styleScrollButton';
 
-import { WrapperScrollDownButton } from './styleScrollButton';
+export default function ScrollDownButton({ text, scrollTargetId }) {
+  const handleScroll = () => {
+    const targetElement = scrollTargetId
+      ? document.getElementById(scrollTargetId)
+      : null;
 
-export default function ScrollDownButton({ text }) {
+    if (!targetElement) {
+      return;
+    }
+
+    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
-    <WrapperScrollDownButton>
+    <WrapperScrollDownButton
+      type="button"
+      onClick={handleScroll}
+      aria-label={text}
+    >
       <p>{text}</p>
-      <CaretDownIcon className="icon" size={16} />
+      <MouseScroll className="mouse" aria-hidden="true" />
     </WrapperScrollDownButton>
   );
 }

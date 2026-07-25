@@ -6,7 +6,7 @@
   "homepage": "https://felipe-muuras.github.io/Muuras/",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/prerender.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
@@ -15,6 +15,7 @@
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",
     "@sankyu/react-circle-flags": "^1.6.7",
+    "@emailjs/browser": "^4.4.1",
     "gh-pages": "^6.3.0",
     "i18next": "^26.0.9",
     "react": "^19.2.5",

@@ -2,11 +2,90 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon-v3.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Muuras</title>
+    <meta
+      name="description"
+      content="Muuras helps cities strengthen climate resilience with nature-based water management and wetland solutions."
+    />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#204725" />
+    <link rel="canonical" href="https://muuras.nl/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Muuras" />
+    <meta property="og:title" content="Muuras — Nature-Based Wetland Walls for Resilient Cities" />
+    <meta
+      property="og:description"
+      content="Muuras reintroduces wetland ecosystems in cities with modular Wetland Walls that purify surface water, boost biodiversity, and make urban areas climate-resilient."
+    />
+    <meta property="og:url" content="https://muuras.nl/" />
+    <meta property="og:image" content="https://muuras.nl/assets/green-facade-climate-resilient-building.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Muuras — Nature-Based Wetland Walls for Resilient Cities" />
+    <meta
+      name="twitter:description"
+      content="Muuras reintroduces wetland ecosystems in cities with modular Wetland Walls that purify surface water, boost biodiversity, and make urban areas climate-resilient."
+    />
+    <meta name="twitter:image" content="https://muuras.nl/assets/green-facade-climate-resilient-building.png" />
+    <title>Muuras — Nature-Based Wetland Walls for Resilient Cities</title>
+
+    <!-- Microsoft Clarity — behaviour analytics / heatmaps / session replay -->
+    <script type="text/javascript">
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = 'https://www.clarity.ms/tag/' + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, 'clarity', 'script', 'xqzrfsoobw');
+    </script>
   </head>
   <body>
+    <!-- Instant dark-green cover so the site never flashes before the intro
+         loader mounts. React removes it on mount; a <noscript> hides it for
+         crawlers that don't run JS so page content stays visible to them. -->
+    <div id="app-loader-bg" aria-hidden="true" style="position:fixed;inset:0;background:#204725;z-index:99998"></div>
+    <noscript><style>#app-loader-bg{display:none!important}</style></noscript>
+    <!-- Glass refraction filter, referenced by the header's backdrop-filter
+         (real distortion of the content behind the menu, not just a blur).
+         Renders in Chrome & Firefox; Safari falls back to the -webkit blur. -->
+    <svg aria-hidden="true" width="0" height="0" style="position: absolute">
+      <defs>
+        <filter
+          id="glass-distortion"
+          x="-20%"
+          y="-20%"
+          width="140%"
+          height="140%"
+          color-interpolation-filters="sRGB"
+        >
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.011 0.016"
+            numOctaves="1"
+            seed="7"
+            result="turb"
+          />
+          <feGaussianBlur in="turb" stdDeviation="2" result="soft" />
+          <feDisplacementMap
+            in="SourceGraphic"
+            in2="soft"
+            scale="26"
+            xChannelSelector="R"
+            yChannelSelector="G"
+          />
+        </filter>
+      </defs>
+    </svg>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
