@@ -96,7 +96,7 @@ export default function About() {
       hoverTitle: t('aboutTeamHoverTitle3'),
       hoverDescription: t('aboutTeamHoverDescription3'),
       linkedIn: t('aboutTeamLinkedin3'),
-      imagePath: `${import.meta.env.BASE_URL}assets/muuras-team-lydia.png`,
+      imagePath: `${import.meta.env.BASE_URL}assets/muuras-team-lydia.jpg`,
       // Wider shot than the others — zoom in a touch, anchored to the bottom,
       // so the framing matches the rest of the team.
       imgScale: 1.2,
@@ -108,7 +108,7 @@ export default function About() {
       hoverTitle: t('aboutTeamHoverTitle1'),
       hoverDescription: t('aboutTeamHoverDescription1'),
       linkedIn: t('aboutTeamLinkedin1'),
-      imagePath: `${import.meta.env.BASE_URL}assets/muuras-team-felipe.png`,
+      imagePath: `${import.meta.env.BASE_URL}assets/muuras-team-felipe.jpg`,
     },
   ];
 

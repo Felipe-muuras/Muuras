@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { primaryColor } from '../../utils/colors';
-import heroBackground from '/assets/hero-background-water.gif';
 import { radius } from '../../utils/radius';
 
 export const HomeContainer = styled.div`
@@ -11,6 +10,8 @@ export const HomeContainer = styled.div`
 `;
 
 export const HeroSection = styled.div`
+  position: relative;
+  overflow: hidden;
   width: 100%;
   padding: 110px 24px 0px 24px;
   height: 80vh;
@@ -18,21 +19,31 @@ export const HeroSection = styled.div`
   flex-direction: column;
   justify-content: center;
   display: flex;
-  /* Brand-green scrim over the photo — darker through the middle band
-     where the text sits — so the white hero copy always has enough
-     contrast, even over the bright water splashes. */
-  background-image:
-    linear-gradient(
+  background-color: ${primaryColor[900]};
+
+  /* Brand-green scrim over the video — darker through the middle band where
+     the text sits — so the white hero copy always has enough contrast, even
+     over the bright water splashes. */
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
       180deg,
       rgba(24, 52, 28, 0.45) 0%,
       rgba(24, 52, 28, 0.64) 42%,
       rgba(24, 52, 28, 0.64) 68%,
       rgba(24, 52, 28, 0.42) 100%
-    ),
-    url(${heroBackground});
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    );
+  }
+
+  /* Everything except the background video sits above the scrim. */
+  & > *:not(video) {
+    position: relative;
+    z-index: 2;
+  }
 
   @media (max-width: 768px) {
     padding: 120px 20px 24px;
@@ -43,6 +54,16 @@ export const HeroSection = styled.div`
   @media (max-width: 360px) {
     padding: 108px 16px 20px;
   }
+`;
+
+/* Looping background video (replaces the old 86MB gif — now a ~2MB mp4). */
+export const HeroVideo = styled.video`
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 export const HeroContent = styled.div`
