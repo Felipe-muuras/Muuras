@@ -86,6 +86,7 @@ export default function About() {
       role: t('aboutTeamMemberRole2'),
       hoverTitle: t('aboutTeamHoverTitle2'),
       hoverDescription: t('aboutTeamHoverDescription2'),
+      bio: t('aboutTeamBio2'),
       linkedIn: t('aboutTeamLinkedin2'),
       imagePath: `${import.meta.env.BASE_URL}assets/muuras-team-gijs.jpg`,
       objectPosition: '75% 50%',
@@ -95,6 +96,7 @@ export default function About() {
       role: t('aboutTeamMemberRole3'),
       hoverTitle: t('aboutTeamHoverTitle3'),
       hoverDescription: t('aboutTeamHoverDescription3'),
+      bio: t('aboutTeamBio3'),
       linkedIn: t('aboutTeamLinkedin3'),
       imagePath: `${import.meta.env.BASE_URL}assets/muuras-team-lydia.jpg`,
       // Wider shot than the others — zoom in a touch, anchored to the bottom,
@@ -107,6 +109,7 @@ export default function About() {
       role: t('aboutTeamMemberRole1'),
       hoverTitle: t('aboutTeamHoverTitle1'),
       hoverDescription: t('aboutTeamHoverDescription1'),
+      bio: t('aboutTeamBio1'),
       linkedIn: t('aboutTeamLinkedin1'),
       imagePath: `${import.meta.env.BASE_URL}assets/muuras-team-felipe.jpg`,
     },
@@ -201,6 +204,7 @@ export default function About() {
                   <TeamCardBio>
                     <h4>{member.hoverTitle}</h4>
                     <p>{member.hoverDescription}</p>
+                    {member.bio && <p className="trajectory">{member.bio}</p>}
                   </TeamCardBio>
                 </TeamCardContent>
               </TeamCard>

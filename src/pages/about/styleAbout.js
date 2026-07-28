@@ -380,13 +380,13 @@ export const TeamCardBio = styled.div`
     margin 0.4s ease;
 
   ${TeamCard}:hover & {
-    max-height: 200px;
+    max-height: 460px;
     opacity: 1;
     margin-top: 10px;
   }
 
   @media (hover: none), (pointer: coarse) {
-    max-height: 200px;
+    max-height: 460px;
     opacity: 1;
     margin-top: 10px;
   }
@@ -403,6 +403,16 @@ export const TeamCardBio = styled.div`
     color: ${textColor.secondary};
     font-size: 15px;
     line-height: 1.55;
+  }
+
+  /* Professional trajectory: a quieter note under the contribution, set off
+     by a hairline divider. */
+  .trajectory {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    font-size: 13px;
+    line-height: 1.5;
   }
 `;
 
