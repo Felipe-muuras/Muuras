@@ -7,7 +7,7 @@ import { AwardCardContainer, AwardTextCardContainer } from './styleAwardCard';
  * time. The tilt/zoom vars are eased in a rAF loop that only runs while the
  * card is being interacted with.
  */
-export default function AwardCard({ imagePath, title, containBg }) {
+export default function AwardCard({ imagePath, title, containBg, url }) {
   const cardRef = useRef(null);
   const current = useRef({ x: 0, y: 0, s: 1 });
   const target = useRef({ x: 0, y: 0, s: 1 });
@@ -79,11 +79,17 @@ export default function AwardCard({ imagePath, title, containBg }) {
   return (
     <AwardCardContainer
       ref={cardRef}
+      as={url ? 'a' : 'div'}
+      href={url || undefined}
+      target={url ? '_blank' : undefined}
+      rel={url ? 'noreferrer noopener' : undefined}
+      aria-label={url ? `${title} (opens in a new tab)` : undefined}
+      draggable={false}
       $containBg={containBg}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleLeave}
     >
-      <img src={imagePath} alt={title} loading="lazy" />
+      <img src={imagePath} alt={title} loading="lazy" draggable={false} />
       <AwardTextCardContainer>
         <h2>{title}</h2>
       </AwardTextCardContainer>

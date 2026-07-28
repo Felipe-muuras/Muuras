@@ -27,19 +27,23 @@ export default function SliderSection() {
       imagePath: `${import.meta.env.BASE_URL}assets/logo-partner-duurzame.png`,
       title: t('impactFirstAwardTitle'),
       containBg: '#ffffff',
+      url: 'https://www.duurzaam-ondernemen.nl/genomineerden-voor-themaprijzen-2021-duurzame-dinsdag-bekend/',
     },
     {
       imagePath: `${import.meta.env.BASE_URL}assets/logo-partner-regieorgaan.png`,
       title: t('impactSecondAwardTitle'),
+      url: 'https://www.sia-projecten.nl/project/sow-flow-green-walls-that-filter-wastewater',
     },
     {
       imagePath: `${import.meta.env.BASE_URL}assets/logo-partner-circular-challenge.png`,
       title: t('impactThirdAwardTtile'),
+      url: 'https://bluecity.nl/nieuws/bluecity-circular-challenge-hoogbouw',
     },
     {
       imagePath: `${import.meta.env.BASE_URL}assets/logo-partner-amsterdam-institute.png`,
       title: t('impactFourthAwardTitle'),
       containBg: '#e3001b',
+      url: 'https://www.ams-institute.org/news/wrap-ams-startup-booster-demo-day-meet-startups/',
     },
   ];
   const COUNT = awards.length;
@@ -54,6 +58,7 @@ export default function SliderSection() {
     aimTarget: null, // set when arrows/dots ask for a specific card; else null
     velocity: 0,
     dragging: false,
+    captured: false, // whether the pointer has been captured for a drag
     paused: false, // true while the mouse hovers the carousel
     lastX: 0,
     moved: 0,
@@ -160,12 +165,13 @@ export default function SliderSection() {
   // --- drag ---------------------------------------------------------------
   const onPointerDown = e => {
     s.dragging = true;
+    s.captured = false; // capture the pointer only once it's really a drag
     s.aimTarget = null; // grabbing cancels any pending arrow/dot move
     s.lastX = e.clientX;
     s.moved = 0;
     s.velocity = 0;
-    viewportRef.current.setPointerCapture?.(e.pointerId);
-    viewportRef.current.classList.add('dragging');
+    // NB: no setPointerCapture here — capturing on mousedown would steal the
+    // click from the card links. We capture in onPointerMove once it's a drag.
   };
 
   const onPointerMove = e => {
@@ -175,19 +181,38 @@ export default function SliderSection() {
     s.velocity = -delta;
     s.moved += Math.abs(delta);
     s.lastX = e.clientX;
+    // Past the click threshold → it's a real drag: capture the pointer (so it
+    // keeps tracking off the viewport) and show the grab cursor.
+    if (!s.captured && s.moved > 6) {
+      s.captured = true;
+      viewportRef.current.setPointerCapture?.(e.pointerId);
+      viewportRef.current.classList.add('dragging');
+    }
   };
 
   const endDrag = e => {
     if (!s.dragging) return;
     s.dragging = false;
-    try {
-      viewportRef.current.releasePointerCapture?.(e.pointerId);
-    } catch {
-      /* already released */
+    if (s.captured) {
+      try {
+        viewportRef.current.releasePointerCapture?.(e.pointerId);
+      } catch {
+        /* already released */
+      }
+      viewportRef.current.classList.remove('dragging');
+      s.captured = false;
     }
-    viewportRef.current.classList.remove('dragging');
     // No snap: the release velocity becomes a fling that glides on and eases
     // back into the endless rotation (see the frame loop's RECOVER blend).
+  };
+
+  // If the pointer actually dragged, swallow the click so releasing on a card
+  // doesn't open its link. A real click barely moves, so it passes through.
+  const handleClickCapture = e => {
+    if (s.moved > 6) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
   };
 
   return (
@@ -226,6 +251,7 @@ export default function SliderSection() {
         onPointerMove={onPointerMove}
         onPointerUp={endDrag}
         onPointerCancel={endDrag}
+        onClickCapture={handleClickCapture}
         onMouseEnter={() => {
           s.paused = true;
         }}
@@ -240,6 +266,7 @@ export default function SliderSection() {
                 imagePath={award.imagePath}
                 title={award.title}
                 containBg={award.containBg}
+                url={award.url}
               />
             </Slide>
           ))}
