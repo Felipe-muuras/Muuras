@@ -16,6 +16,7 @@ import Home from './pages/home/Home.jsx';
 import Services from './pages/services/Services.jsx';
 import Products from './pages/products/Products.jsx';
 import About from './pages/about/About.jsx';
+import Privacy from './pages/privacy/Privacy.jsx';
 
 export function render(path) {
   const sheet = new ServerStyleSheet();
@@ -29,6 +30,7 @@ export function render(path) {
             <Route path="/services" element={<Services />} />
             <Route path="/products" element={<Products />} />
             <Route path="/about" element={<About />} />
+            <Route path="/privacy" element={<Privacy />} />
           </Routes>
         </StaticRouter>
       </StyleSheetManager>,
