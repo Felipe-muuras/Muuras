@@ -18,7 +18,7 @@ import {
 
 const SETS = 4; // copies rendered so the loop never runs out of cards
 const EASE = 0.14; // how fast the track eases toward a tapped card / arrow step
-const AUTO_SPEED = 0.6; // endless idle drift, px per frame (~36px/s @ 60fps)
+const AUTO_SPEED = 0.4; // endless idle drift, px per frame (~24px/s @ 60fps)
 const RECOVER = 0.04; // how gently a fling settles back into the endless drift
 
 export default function SliderSection() {
