@@ -63,6 +63,15 @@ export const PAGES = [
     image: `${SITE.url}/assets/old-trees-sunlight-forest-values.jpg`,
     breadcrumb: true,
   },
+  {
+    path: '/privacy',
+    name: 'Privacy & Cookies',
+    title: 'Privacy & Cookie Policy — Muuras',
+    description:
+      'How Muuras handles personal data and cookies: what we collect, the analytics we use, your rights under the GDPR, and how to contact us.',
+    image: `${SITE.url}/assets/green-facade-climate-resilient-building.png`,
+    breadcrumb: true,
+  },
 ];
 
 export const getPage = path => PAGES.find(p => p.path === path);

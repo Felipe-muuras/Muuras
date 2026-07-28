@@ -113,6 +113,7 @@ export default function SiteFooter() {
                 <FooterExternalLink href="mailto:gijs@muuras.nl">
                   gijs@muuras.nl
                 </FooterExternalLink>
+                <FooterNavLink to="/privacy">Privacy &amp; Cookies</FooterNavLink>
               </FooterLinks>
             </FooterColumn>
           </FooterColumns>
