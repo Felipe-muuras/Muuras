@@ -54,6 +54,7 @@ export default function SliderSection() {
     aimTarget: null, // set when arrows/dots ask for a specific card; else null
     velocity: 0,
     dragging: false,
+    paused: false, // true while the mouse hovers the carousel
     lastX: 0,
     moved: 0,
     pitch: 1,
@@ -91,7 +92,7 @@ export default function SliderSection() {
       const pitch = s.pitch || 1;
       const w = s.setWidth;
 
-      if (!s.dragging) {
+      if (!s.dragging && !s.paused) {
         if (s.aimTarget != null) {
           // A tapped card / arrow step: ease to it, then hand back to the drift.
           s.offset += (s.aimTarget - s.offset) * EASE;
@@ -225,6 +226,12 @@ export default function SliderSection() {
         onPointerMove={onPointerMove}
         onPointerUp={endDrag}
         onPointerCancel={endDrag}
+        onMouseEnter={() => {
+          s.paused = true;
+        }}
+        onMouseLeave={() => {
+          s.paused = false;
+        }}
       >
         <SliderTrack ref={trackRef}>
           {items.map((award, index) => (
