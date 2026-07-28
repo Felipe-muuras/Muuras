@@ -57,15 +57,12 @@ export default function FormSection({ sectionId = 'contact' }) {
         serviceId,
         templateId,
         {
-          from_name: name,
+          // Variable names must match the EmailJS template placeholders.
+          name,
           organization: organization || '-',
-          from_email: email,
+          email,
           message,
-          consent: consent ? 'Yes' : 'No',
-          reply_to: email,
-          to_email: 'felipe@muuras.nl,gijs@muuras.nl',
-          origin: 'Formulário do Site (muuras.nl)',
-          subject: `Formulário do Site — Contato de ${name}`,
+          consent: consent ? 'Sim' : 'Não',
         },
         {
           publicKey,
