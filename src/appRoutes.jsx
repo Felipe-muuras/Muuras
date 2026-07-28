@@ -4,6 +4,10 @@ import ScrollToHash from './components/scrollToHash/ScrollToHash';
 import BackToTop from './components/backToTop/BackToTop';
 import PageTransition from './components/pageTransition/PageTransition';
 import CookieConsent from './components/cookieConsent/CookieConsent';
+// Eager (not code-split): the cookie banner links here on the very first
+// visit, so its chunk must never be cold — a suspended lazy route inside the
+// page-transition wipe is what left it stuck on a green screen.
+import Privacy from './pages/privacy/Privacy';
 
 // Code-split each page so the browser only downloads the JS for the
 // route the visitor actually opens.
@@ -11,7 +15,6 @@ const Home = lazy(() => import('./pages/home/Home'));
 const Services = lazy(() => import('./pages/services/Services'));
 const Products = lazy(() => import('./pages/products/Products'));
 const About = lazy(() => import('./pages/about/About'));
-const Privacy = lazy(() => import('./pages/privacy/Privacy'));
 const Building = lazy(() => import('./pages/building/Building'));
 
 // Full-viewport placeholder on the site's dark-green background so the
