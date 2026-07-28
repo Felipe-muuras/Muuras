@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import { primaryColor } from '../../utils/colors';
 import { radius } from '../../utils/radius';
@@ -263,5 +263,78 @@ export const SubmitButton = styled.button`
   @media (max-width: 360px) {
     width: 100%;
     justify-content: center;
+  }
+`;
+
+/* --- Submission feedback toast (replaces the native alert) --------------- */
+const toastIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+export const Toast = styled.div`
+  position: fixed;
+  z-index: 9999;
+  right: 24px;
+  bottom: 24px;
+  max-width: min(380px, calc(100vw - 32px));
+
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  padding: 14px 16px;
+  background: #ffffff;
+  border-radius: ${radius.lg};
+  border-left: 4px solid
+    ${({ $type }) => ($type === 'error' ? '#c0392b' : primaryColor[500])};
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+
+  animation: ${toastIn} 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+
+  @media (max-width: 480px) {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    max-width: none;
+  }
+`;
+
+export const ToastIcon = styled.span`
+  flex: none;
+  margin-top: 1px;
+  display: inline-flex;
+  color: ${({ $type }) => ($type === 'error' ? '#c0392b' : primaryColor[500])};
+`;
+
+export const ToastText = styled.p`
+  flex: 1;
+  color: ${primaryColor[900]};
+  font-size: 14px;
+  line-height: 1.45;
+`;
+
+export const ToastClose = styled.button`
+  flex: none;
+  display: inline-flex;
+  padding: 2px;
+  border: none;
+  border-radius: ${radius.pill};
+  background: transparent;
+  color: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+
+  &:hover {
+    color: ${primaryColor[900]};
+    background: rgba(0, 0, 0, 0.06);
   }
 `;
