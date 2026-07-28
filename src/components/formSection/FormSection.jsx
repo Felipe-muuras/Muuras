@@ -9,13 +9,22 @@ import {
   FormFieldLabel,
   ConsentRow,
   SubmitButton,
+  Toast,
+  ToastIcon,
+  ToastText,
+  ToastClose,
 } from './styleFormSection';
 import SiteFooter from '../siteFooter/SiteFooter';
-import { ArrowRightIcon } from '@phosphor-icons/react';
+import {
+  ArrowRightIcon,
+  CheckCircleIcon,
+  WarningCircleIcon,
+  XIcon,
+} from '@phosphor-icons/react';
 import emailjs from '@emailjs/browser';
 
 import 'react-phone-number-input/style.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 export default function FormSection({ sectionId = 'contact' }) {
@@ -26,6 +35,14 @@ export default function FormSection({ sectionId = 'contact' }) {
   const [message, setMessage] = useState('');
   const [consent, setConsent] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [toast, setToast] = useState(null); // { type: 'success' | 'error', text }
+
+  // Auto-dismiss the toast after a few seconds.
+  useEffect(() => {
+    if (!toast) return undefined;
+    const id = setTimeout(() => setToast(null), 6000);
+    return () => clearTimeout(id);
+  }, [toast]);
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -69,14 +86,14 @@ export default function FormSection({ sectionId = 'contact' }) {
         },
       );
 
-      alert(t('contactSubmitSuccess'));
+      setToast({ type: 'success', text: t('contactSubmitSuccess') });
       setName('');
       setOrganization('');
       setEmail('');
       setMessage('');
       setConsent(false);
     } catch {
-      alert(t('contactSubmitError'));
+      setToast({ type: 'error', text: t('contactSubmitError') });
     } finally {
       setIsSubmitting(false);
     }
@@ -178,6 +195,26 @@ export default function FormSection({ sectionId = 'contact' }) {
         </FormContainer>
       </FormSectionSizeControll>
       <SiteFooter />
+
+      {toast && (
+        <Toast $type={toast.type} role="status" aria-live="polite">
+          <ToastIcon $type={toast.type}>
+            {toast.type === 'error' ? (
+              <WarningCircleIcon size={22} weight="fill" />
+            ) : (
+              <CheckCircleIcon size={22} weight="fill" />
+            )}
+          </ToastIcon>
+          <ToastText>{toast.text}</ToastText>
+          <ToastClose
+            type="button"
+            onClick={() => setToast(null)}
+            aria-label="Close"
+          >
+            <XIcon size={16} weight="bold" />
+          </ToastClose>
+        </Toast>
+      )}
     </FormSectionContainer>
   );
 }
