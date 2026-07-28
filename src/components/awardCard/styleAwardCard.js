@@ -14,6 +14,12 @@ export const AwardCardContainer = styled.div`
   height: 100%;
   background: #ffffff;
 
+  /* Rendered as an <a> when the award links out — keep it looking like a card,
+     not a default link, and hint that it's clickable. */
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+
   /* Same interaction as the Resilient Cities cards: a cursor-following 3D tilt
      plus a gentle zoom. --rx/--ry/--scale are eased in JS (AwardCard), so the
      transform itself carries no transition. */
