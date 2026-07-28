@@ -142,6 +142,21 @@ export default function PageTransition({ children }) {
     }
   }, [displayLocation]);
 
+  // Safety net: normally the wipe commits when the layer's clip animation
+  // ends. If that never fires — e.g. an incoming lazy route suspends and the
+  // layer shows the Suspense fallback instead of finishing cleanly — force the
+  // commit so the overlay can never get stuck covering the page.
+  useEffect(() => {
+    if (!incoming) return undefined;
+    const id = setTimeout(() => {
+      pendingHash.current = incoming.hash || null;
+      setDisplayLocation(incoming);
+      setIncoming(null);
+      window.scrollTo(0, 0);
+    }, 2200);
+    return () => clearTimeout(id);
+  }, [incoming]);
+
   const handleWipeEnd = event => {
     // Only react to the clip animation on the layer itself, not child anims.
     if (event.target !== event.currentTarget) {
