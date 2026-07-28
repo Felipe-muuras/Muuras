@@ -17,8 +17,9 @@ import {
 } from './styleSliderContainer.js';
 
 const SETS = 4; // copies rendered so the loop never runs out of cards
-const EASE = 0.14; // how fast the track eases toward the target card
-const SNAP_VEL = 6; // how much fling velocity influences the landing card
+const EASE = 0.14; // how fast the track eases toward a tapped card / arrow step
+const AUTO_SPEED = 0.6; // endless idle drift, px per frame (~36px/s @ 60fps)
+const RECOVER = 0.04; // how gently a fling settles back into the endless drift
 
 export default function SliderSection() {
   const awards = [
@@ -50,7 +51,7 @@ export default function SliderSection() {
   const trackRef = useRef(null);
   const s = useRef({
     offset: 0,
-    targetIndex: 0,
+    aimTarget: null, // set when arrows/dots ask for a specific card; else null
     velocity: 0,
     dragging: false,
     lastX: 0,
@@ -80,29 +81,42 @@ export default function SliderSection() {
     window.addEventListener('resize', measure);
     window.addEventListener('scroll', measure, { passive: true });
 
+    // Honour users who prefer less motion — no endless drift for them, but
+    // the arrows, dots and drag still work.
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const AUTO = reduce ? 0 : AUTO_SPEED;
+
     let raf = 0;
     const frame = () => {
       const pitch = s.pitch || 1;
+      const w = s.setWidth;
 
       if (!s.dragging) {
-        // Ease toward the target card.
-        s.offset += (s.targetIndex * pitch - s.offset) * EASE;
-        // Once settled, fold whole sets back so numbers never grow unbounded.
-        if (Math.abs(s.targetIndex * pitch - s.offset) < 0.4) {
-          s.offset = s.targetIndex * pitch;
-          const w = s.setWidth;
-          if (w > 0 && (s.offset >= w || s.offset < 0)) {
-            const sets = Math.floor(s.offset / w);
-            s.offset -= sets * w;
-            s.targetIndex -= sets * COUNT;
+        if (s.aimTarget != null) {
+          // A tapped card / arrow step: ease to it, then hand back to the drift.
+          s.offset += (s.aimTarget - s.offset) * EASE;
+          if (Math.abs(s.aimTarget - s.offset) < 0.5) {
+            s.offset = s.aimTarget;
+            s.aimTarget = null;
+            s.velocity = AUTO; // resume the endless glide from here
           }
+        } else {
+          // Endless rotation: velocity eases back to the gentle auto drift, so
+          // a fling glides on for a while and then settles into the loop.
+          s.velocity += (AUTO - s.velocity) * RECOVER;
+          s.offset += s.velocity;
         }
       }
 
-      // Seamless wrap for the rendered transform.
-      const w = s.setWidth;
-      const renderOffset = w > 0 ? ((s.offset % w) + w) % w : s.offset;
-      track.style.transform = `translate3d(${-renderOffset}px, 0, 0)`;
+      // Keep the offset within one set so numbers never grow unbounded and the
+      // loop stays seamless (the track holds SETS identical copies).
+      if (w > 0 && (s.offset >= w || s.offset < 0)) {
+        const sets = Math.floor(s.offset / w);
+        s.offset -= sets * w;
+        if (s.aimTarget != null) s.aimTarget -= sets * w;
+      }
+
+      track.style.transform = `translate3d(${-s.offset}px, 0, 0)`;
 
       // Active dot from the nearest card.
       const active =
@@ -125,21 +139,27 @@ export default function SliderSection() {
   }, [s, COUNT]);
 
   // --- navigation ---------------------------------------------------------
+  // Arrows/dots aim at a specific card; the loop eases there, then resumes the
+  // endless drift on its own.
   const go = dir => {
-    s.targetIndex = Math.round(s.offset / (s.pitch || 1)) + dir;
+    const pitch = s.pitch || 1;
+    const nearest = Math.round(s.offset / pitch);
+    s.aimTarget = (nearest + dir) * pitch;
   };
 
   const goToDot = d => {
-    const current = Math.round(s.offset / (s.pitch || 1));
+    const pitch = s.pitch || 1;
+    const current = Math.round(s.offset / pitch);
     const currentMod = ((current % COUNT) + COUNT) % COUNT;
     let diff = ((d - currentMod) % COUNT + COUNT) % COUNT; // forward 0..COUNT-1
     if (diff > COUNT / 2) diff -= COUNT; // take the shorter way round
-    s.targetIndex = current + diff;
+    s.aimTarget = (current + diff) * pitch;
   };
 
   // --- drag ---------------------------------------------------------------
   const onPointerDown = e => {
     s.dragging = true;
+    s.aimTarget = null; // grabbing cancels any pending arrow/dot move
     s.lastX = e.clientX;
     s.moved = 0;
     s.velocity = 0;
@@ -165,9 +185,8 @@ export default function SliderSection() {
       /* already released */
     }
     viewportRef.current.classList.remove('dragging');
-    // Snap to the nearest card, carried by the fling velocity.
-    const pitch = s.pitch || 1;
-    s.targetIndex = Math.round((s.offset + s.velocity * SNAP_VEL) / pitch);
+    // No snap: the release velocity becomes a fling that glides on and eases
+    // back into the endless rotation (see the frame loop's RECOVER blend).
   };
 
   return (
