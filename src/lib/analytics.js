@@ -7,7 +7,7 @@
  */
 
 const CONSENT_KEY = 'muuras-cookie-consent'; // 'granted' | 'denied'
-const GA_ID = 'G-HX5HD05W7P';
+const GA_ID = 'G-6ZQWY6HMB4';
 const CLARITY_ID = 'xqzrfsoobw';
 
 export function getConsent() {
