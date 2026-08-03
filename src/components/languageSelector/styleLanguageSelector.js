@@ -96,14 +96,15 @@ export const Dropdown = styled.div`
     height: 12px;
   }
 
-  /* Keep the menu close to the trigger on smaller screens as well. */
+  /* Keep the menu close to the trigger on smaller screens as well and
+     center it horizontally so it stays visually anchored to the button. */
   @media (max-width: 980px) {
     position: absolute;
     top: calc(100% + 4px);
-    right: 0;
-    left: auto;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%) translateY(${({ $open }) => ($open ? '0' : '8px')});
     max-width: min(220px, calc(100vw - 24px));
-    transform: translateY(${({ $open }) => ($open ? '0' : '8px')});
   }
 `;
 
