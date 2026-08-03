@@ -64,7 +64,7 @@ export const SelectedLanguageButton = styled.button`
 // Dropdown — the same dark-green panel as the nav submenus.
 export const Dropdown = styled.div`
   position: absolute;
-  top: calc(100% + 10px);
+  top: calc(100% + 4px);
   right: 0;
 
   min-width: 200px;
@@ -86,32 +86,24 @@ export const Dropdown = styled.div`
     transform 0.2s ease;
   z-index: 20;
 
-  /* Transparent bridge over the 10px gap so hover stays continuous. */
+  /* Transparent bridge so the hover transition stays continuous. */
   &::before {
     content: '';
     position: absolute;
     left: 0;
     right: 0;
     bottom: 100%;
-    height: 10px;
+    height: 12px;
   }
 
-  /* On mobile the trigger sits near the right edge, so anchoring the list
-     to it pushes it off-screen. Pin it to the viewport and center it,
-     just below the header bar, so it always stays fully visible. */
+  /* Keep the menu close to the trigger on smaller screens as well. */
   @media (max-width: 980px) {
-    position: fixed;
-    top: 90px;
-    left: 50%;
-    right: auto;
-    max-width: calc(100vw - 32px);
-    transform: translateX(-50%)
-      translateY(${({ $open }) => ($open ? '0' : '8px')});
-  }
-
-  @media (max-width: 560px) {
-    top: 74px;
-    max-width: calc(100vw - 24px);
+    position: absolute;
+    top: calc(100% + 4px);
+    right: 0;
+    left: auto;
+    max-width: min(220px, calc(100vw - 24px));
+    transform: translateY(${({ $open }) => ($open ? '0' : '8px')});
   }
 `;
 

@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { LinkedinLogoIcon, HeartIcon } from '@phosphor-icons/react';
 import {
   FooterContainer,
@@ -16,6 +17,11 @@ import {
   FooterRights,
   FooterDivider,
   FooterSocialButton,
+  FooterContactActionContainer,
+  FooterContactTrigger,
+  FooterContactMenu,
+  FooterContactMenuButton,
+  FooterContactFeedback,
 } from './styleSiteFooter';
 
 const homeLinks = [
@@ -39,6 +45,47 @@ const productsLinks = [
 ];
 
 export default function SiteFooter() {
+  const [showContactActions, setShowContactActions] = useState(false);
+  const [feedback, setFeedback] = useState('');
+  const emailAddress = 'contact@muuras.nl';
+
+  useEffect(() => {
+    if (!showContactActions) {
+      return undefined;
+    }
+
+    const handleClickOutside = event => {
+      if (event.target.closest('[data-contact-menu]')) {
+        return;
+      }
+
+      setShowContactActions(false);
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [showContactActions]);
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(emailAddress);
+      setFeedback('Email copied');
+    } catch {
+      setFeedback('Copy unavailable');
+    }
+
+    setShowContactActions(false);
+    window.setTimeout(() => setFeedback(''), 1800);
+  };
+
+  const handleSendEmail = () => {
+    window.location.href = `mailto:${emailAddress}`;
+    setFeedback('Opening email app');
+    setShowContactActions(false);
+    window.setTimeout(() => setFeedback(''), 1800);
+  };
+
   return (
     <FooterContainer>
       <FooterInner>
@@ -107,12 +154,27 @@ export default function SiteFooter() {
                 Contact
               </FooterColumnTitle>
               <FooterLinks>
-                <FooterExternalLink href="mailto:felipe@muuras.nl">
-                  felipe@muuras.nl
-                </FooterExternalLink>
-                <FooterExternalLink href="mailto:gijs@muuras.nl">
-                  gijs@muuras.nl
-                </FooterExternalLink>
+                <FooterContactActionContainer data-contact-menu>
+                  <FooterContactTrigger
+                    type="button"
+                    onClick={() => setShowContactActions(prev => !prev)}
+                    aria-expanded={showContactActions}
+                    aria-label={`Contact options for ${emailAddress}`}
+                  >
+                    {emailAddress}
+                  </FooterContactTrigger>
+                  {showContactActions && (
+                    <FooterContactMenu role="menu">
+                      <FooterContactMenuButton type="button" onClick={handleCopyEmail} role="menuitem">
+                        Copy email
+                      </FooterContactMenuButton>
+                      <FooterContactMenuButton type="button" onClick={handleSendEmail} role="menuitem">
+                        Send email
+                      </FooterContactMenuButton>
+                    </FooterContactMenu>
+                  )}
+                  {feedback && <FooterContactFeedback>{feedback}</FooterContactFeedback>}
+                </FooterContactActionContainer>
                 <FooterNavLink to="/privacy">Privacy &amp; Cookies</FooterNavLink>
               </FooterLinks>
             </FooterColumn>

@@ -140,6 +140,69 @@ export const FooterExternalLink = styled.a`
   ${baseLink}
 `;
 
+export const FooterContactActionContainer = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+`;
+
+export const FooterContactTrigger = styled.button`
+  ${baseLink}
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+  font-weight: 600;
+  color: #ffffff;
+
+  &:hover {
+    color: #ffffff;
+    transform: translateX(3px);
+  }
+`;
+
+export const FooterContactMenu = styled.div`
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid rgba(32, 71, 37, 0.12);
+  border-radius: ${radius.md};
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+  z-index: 10;
+`;
+
+export const FooterContactMenuButton = styled.button`
+  border: 0;
+  background: transparent;
+  color: ${primaryColor[900]};
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    color: ${primaryColor[500]};
+    transform: translateX(2px);
+  }
+`;
+
+export const FooterContactFeedback = styled.span`
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+`;
+
 export const FooterDivider = styled.div`
   width: 100%;
   height: 1px;
