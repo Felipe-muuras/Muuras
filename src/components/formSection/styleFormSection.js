@@ -195,11 +195,15 @@ export const ConsentRow = styled.div`
   column-gap: 8px;
   margin-top: 0.25rem;
 
-  input {
+  input[type='checkbox'] {
     width: 18px;
     height: 18px;
-    flex: none;
+    min-width: 18px;
+    max-width: 18px;
+    flex: 0 0 18px;
     margin-top: 2px;
+    display: inline-block;
+    box-sizing: border-box;
     accent-color: ${primaryColor[400]};
     cursor: pointer;
   }
