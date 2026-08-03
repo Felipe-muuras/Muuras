@@ -192,7 +192,7 @@ export const FormFieldLabel = styled.label`
 export const ConsentRow = styled.div`
   display: flex;
   align-items: flex-start;
-  column-gap: 12px;
+  column-gap: 8px;
   margin-top: 0.25rem;
 
   input {
@@ -205,9 +205,14 @@ export const ConsentRow = styled.div`
   }
 
   label {
+    margin: 0;
     font-size: 13px;
     line-height: 1.45;
     color: rgba(255, 255, 255, 0.7);
+  }
+
+  @media (max-width: 560px) {
+    column-gap: 8px;
   }
 `;
 
